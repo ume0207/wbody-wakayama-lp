@@ -66,7 +66,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
 .bg-dark { background: var(--bg-dark); color: var(--white); }
 .bg-light { background: var(--bg-light); }
 .text-center { text-align: center; }
-.p-4 { padding: 2.4rem 1.5rem; }
+.p-4 { padding: 1.4rem 1.5rem; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-4 { margin-bottom: 2rem; }
 
@@ -115,7 +115,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
 .hero-content {
   position: relative;
   z-index: 1;
-  min-height: 620px;
+  min-height: 560px;
   background:
     radial-gradient(circle at 85% 18%, rgba(234,207,190,0.3), transparent 55%),
     linear-gradient(180deg, rgba(85,49,57,0.2) 0%, rgba(85,49,57,0.5) 45%, rgba(58,31,39,0.94) 100%);
@@ -124,7 +124,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
   justify-content: flex-start;
   align-items: center;
   color: #fff;
-  padding: 46px 16px 0;
+  padding: 34px 16px 0;
 }
 .hero-content::before {
   content: '';
@@ -175,7 +175,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
   transform: rotate(-3deg);
   transform-origin: left center;
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   font-size: clamp(12px, 3.4vw, 14px);
   letter-spacing: .03em;
   box-shadow: 0 3px 12px rgba(85,49,57,.35);
@@ -201,7 +201,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
 }
 .hero-sub {
   font-size: clamp(13px, 3.6vw, 16px);
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   text-shadow: 1px 1px 4px #000;
   text-align: center;
   line-height: 1.55;
@@ -210,9 +210,9 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  margin: auto -16px 28px;
+  margin: auto -16px 14px;
   width: calc(100% + 32px);
-  padding: 14px 6px 16px;
+  padding: 10px 6px 12px;
   justify-items: center;
   align-items: end;
   background: linear-gradient(180deg, transparent, rgba(7,38,63,0.92));
@@ -283,7 +283,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
 }
 
 /* ─── CTAボタン ─── */
-.cta-container { padding: 24px 18px; text-align: center; }
+.cta-container { padding: 14px 18px; text-align: center; }
 .btn-main {
   display: block;
   background: linear-gradient(180deg, #eacfbe, #c99a86 55%, #a86e60);
@@ -358,9 +358,9 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   text-align: center;
   font-size: clamp(17px, 4.8vw, 24px);
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
   position: relative;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   line-height: 1.5;
   color: var(--main-dark);
 }
@@ -387,9 +387,9 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 /* ─── 口コミ ─── */
 .review-card {
   background: var(--white);
-  padding: 22px;
+  padding: 16px 18px;
   border-radius: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   border: 1px solid rgba(201,154,134,.18);
   box-shadow: 0 10px 28px rgba(168,110,96,.1);
   position: relative;
@@ -603,7 +603,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   color: #ddd;
   margin-top: 6px;
 }
-.empathy-list { list-style: none; padding: 22px 20px; }
+.empathy-list { list-style: none; padding: 14px 20px; }
 .empathy-list li {
   padding: 11px 0 11px 32px;
   border-bottom: 1px dashed #ccc;
@@ -622,7 +622,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
     radial-gradient(circle at 85% 100%, rgba(212,138,146,.15), transparent 55%),
     var(--bg-dark);
   color: #f3e8de;
-  padding: 3rem 1.5rem;
+  padding: 1.6rem 1.5rem;
 }
 .cause-title {
   color: var(--accent-light);
@@ -648,13 +648,13 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 .cause-point strong { color: var(--accent-light); display: block; margin-bottom: 6px; font-size: 15px; letter-spacing: .04em; }
 
 /* ─── 解決策 ─── */
-.solution-section { padding: 0 0 3rem; background: var(--bg-light); }
+.solution-section { padding: 0 0 1.6rem; background: var(--bg-light); }
 .solution-hero {
   position: relative;
   aspect-ratio: 5 / 4;
   overflow: hidden;
   background: #000;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 .solution-hero img {
   width: 100%; height: 100%; object-fit: cover;
@@ -727,7 +727,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 /* ─── 選ばれる理由 ─── */
 .reason-card {
   position: relative;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 16px 34px rgba(85,49,57,.16);
@@ -794,7 +794,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   padding: 0 2px;
 }
 .reason-text {
-  padding: 22px 22px 24px;
+  padding: 14px 20px 16px;
   background: #fff;
   font-size: 14px;
   line-height: 1.85;
@@ -807,7 +807,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 }
 
 /* ─── ステップ ─── */
-.step-item { display: flex; margin-bottom: 24px; position: relative; }
+.step-item { display: flex; margin-bottom: 14px; position: relative; }
 .step-num {
   width: 62px; height: 62px;
   background: linear-gradient(145deg, var(--main), var(--main-dark));
@@ -868,9 +868,9 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 .price-card {
   border: 1.5px solid #eadbcf;
   border-radius: 18px;
-  padding: 26px 20px 24px;
+  padding: 18px 20px 18px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   background: #fff;
   box-shadow: 0 8px 24px rgba(168,110,96,.08);
 }
@@ -925,7 +925,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 /* ─── FAQ ─── */
 .faq-item { border-bottom: 1px solid rgba(201,154,134,.18); background: #fff; }
 .faq-q {
-  padding: 16px 18px;
+  padding: 12px 18px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -1169,16 +1169,16 @@ body { padding-bottom: 76px; }
     </div>
     <div class="hero-points">
       <div class="hero-point">
-        <strong>国家資格</strong>理学療法士
-        <span class="pt-en">LICENSED</span>
+        <strong>9割が</strong>初心者
+        <span class="pt-en">BEGINNERS</span>
       </div>
       <div class="hero-point">
-        <strong>整体 ×</strong>ピラティス
-        <span class="pt-en">COMBINED</span>
+        <strong>理学療法士</strong>が担当
+        <span class="pt-en">LICENSED PT</span>
       </div>
       <div class="hero-point">
-        <strong>30代</strong>女性特化
-        <span class="pt-en">FOR WOMEN</span>
+        <strong>和歌山駅</strong>徒歩3分
+        <span class="pt-en">3MIN WALK</span>
       </div>
     </div>
   </div>
@@ -1197,39 +1197,39 @@ body { padding-bottom: 76px; }
     <div class="review-header">
       <div class="review-avatar"><img src="images/review1.jpg" alt="お客様の声1" loading="lazy"></div>
       <div>
-        <div class="review-name">お客様の声</div>
+        <div class="review-name">30代女性 / 会社員</div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">肩こり・頭痛・めまいでお悩みの方</div>
+        <div class="review-meta">腰痛でお悩みだった方</div>
       </div>
     </div>
-    <div class="review-headline">慢性的な肩こりと頭痛が消えて、夜もぐっすり眠れるように！</div>
-    <p>ひどい肩こりから頭痛・めまいまで出ていたのですが、整体でしっかり骨格を整えてもらってからピラティスで体幹を鍛えると、みるみる体が軽くなりました。今では肩の重さを感じることもなく、毎晩ぐっすり眠れています。あんなに悩んでいたのが嘘みたいです！！</p>
+    <div class="review-headline">腰痛が軽くなって、姿勢も良くなった気がします</div>
+    <p>座り仕事で腰の痛みがずっとあったのですが、通い始めて少しずつラクになってきました。整体で整えてもらった後にピラティスをやると体がスッと動く感じがして、最近は姿勢まで良くなった気がします。先生がすごく話しやすくて、毎回通うのが楽しみです。</p>
   </div>
 
   <div class="review-card">
     <div class="review-header">
       <div class="review-avatar"><img src="images/review2.jpg" alt="お客様の声2" loading="lazy"></div>
       <div>
-        <div class="review-name">お客様の声</div>
+        <div class="review-name">30代女性 / ワーママ</div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">姿勢改善・体型変化でお悩みの方</div>
+        <div class="review-meta">姿勢・見た目の変化を感じた方</div>
       </div>
     </div>
-    <div class="review-headline">背中がスッキリ、ヒップUP。姿勢が変わったね！と言われるように。</div>
-    <p>先生の分かりやすい説明と前向きなアドバイスのおかげで根気強く続けられています。整体で骨盤を整えてからピラティスをすると体を動かすことが楽になり、体型も少しずつ変化。背中がスッキリしてハリのあるバストになり、ヒップも上がりました。周りから「姿勢よくなったね」「なんか変わった？」と言われることが増えました。ウェディングドレスを素敵に着るという目標に向けて、これからも頑張ります！♡</p>
+    <div class="review-headline">見た目が変わってきて、鏡を見るのが楽しくなりました</div>
+    <p>猫背だったのが少しずつ真っ直ぐになってきて、友達から「なんか雰囲気変わった？」と言われるようになりました。体重は大きく変わってないのに見た目は結構変わった気がします。先生がめちゃくちゃ面白くて、気付いたら1時間があっという間に終わってます。</p>
   </div>
 
   <div class="review-card">
     <div class="review-header">
       <div class="review-avatar"><img src="images/review3.jpg" alt="お客様の声3" loading="lazy"></div>
       <div>
-        <div class="review-name">お客様の声</div>
+        <div class="review-name">30代女性 / 主婦</div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">腰痛・全身のゆがみでお悩みの方</div>
+        <div class="review-meta">産後の腰痛・体型変化でお悩みだった方</div>
       </div>
     </div>
-    <div class="review-headline">長年の腰痛と全身のねじれが取れて、体が楽になりました！</div>
-    <p>長年悩んでいた腰の痛みと体全体のねじれ感が、ここに通うようになってからみるみる改善されました。整体で原因となっているゆがみをほぐしてもらい、その後ピラティスで正しい姿勢を体に覚えさせる流れが本当に効果的。痛みが取れるだけでなく、見た目の姿勢まで変わったと家族にも言われました！！</p>
+    <div class="review-headline">産後の腰の痛みが取れて、体型も戻ってきました</div>
+    <p>産後ずっと腰が痛くて、体型も戻らず悩んでいました。整体とピラティスの両方ができるのでここを選びましたが正解でした。腰の痛みが和らいで、前のパンツが履けるようになってきて嬉しいです。先生の雰囲気が本当に楽しくて、運動が続かない私でもここだけは続けられています。</p>
   </div>
 
   <p class="text-center" style="font-size:12px; color:#888; margin-top:4px;">※個人の感想であり、効果には個人差があります</p>
@@ -1678,7 +1678,7 @@ body { padding-bottom: 76px; }
 </div>
 
 <!-- 最終CTA -->
-<div class="cta-container reveal bg-dark" style="padding: 44px 20px;">
+<div class="cta-container reveal bg-dark" style="padding: 26px 20px;">
   <h2 class="gold-text mb-4" style="font-size: 24px; line-height:1.5;">その不調、<br>もう一人で抱えないでください。</h2>
   <p style="color:#ccc; font-size:14px; margin-bottom: 26px;">理学療法士が、あなたの体と向き合います。</p>
   <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="btn-main" style="font-size: 20px;">
