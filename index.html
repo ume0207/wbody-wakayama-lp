@@ -1018,6 +1018,122 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.active { opacity: 1; transform: none; }
 
+/* ─── 2ステップコンセプト ─── */
+.concept-section {
+  background: var(--white);
+  padding: 2.4rem 1.5rem 2rem;
+}
+.concept-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+.concept-step {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  position: relative;
+}
+.concept-step + .concept-step { margin-top: 0; }
+.concept-line-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 52px;
+}
+.concept-circle {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: .02em;
+  box-shadow: 0 6px 16px rgba(85,49,57,.22);
+  color: #fff;
+  z-index: 1;
+}
+.concept-circle.step1 {
+  background: linear-gradient(145deg, var(--main), var(--main-dark));
+}
+.concept-circle.step2 {
+  background: linear-gradient(145deg, #7a6a9a, #4a3a6a);
+}
+.concept-connector {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent) 0%, rgba(201,154,134,.2) 100%);
+  margin: 4px 0;
+  min-height: 24px;
+}
+.concept-arrow {
+  font-size: 18px;
+  color: var(--accent);
+  line-height: 1;
+  padding: 4px 0 8px;
+  text-align: center;
+  width: 52px;
+  flex-shrink: 0;
+}
+.concept-body {
+  flex: 1;
+  padding-bottom: 20px;
+}
+.concept-eyebrow {
+  font-size: 10px;
+  letter-spacing: .35em;
+  color: var(--accent-deep);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+.concept-body h3 {
+  font-size: clamp(17px, 5vw, 20px);
+  font-weight: 700;
+  color: var(--main-dark);
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+.concept-body h3 .hl {
+  background: linear-gradient(transparent 65%, rgba(212,138,146,.55) 65%);
+  padding: 0 3px;
+}
+.concept-body p {
+  font-size: 13.5px;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+.concept-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 10px;
+  margin-top: 12px;
+  box-shadow: 0 8px 20px rgba(85,49,57,.14);
+  filter: brightness(0.95);
+}
+.concept-result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-light);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--main);
+  margin-top: 10px;
+  letter-spacing: .03em;
+}
+
 /* ─── ボディ下部の余白（スティッキーCTA分）─── */
 body { padding-bottom: 76px; }
 </style>
@@ -1040,11 +1156,11 @@ body { padding-bottom: 76px; }
   <div class="hero-content">
     <div class="hero-tag">整体 × マシンピラティス 専門</div>
     <div class="badge-stamp">国家資格<br>理学療法士<br>担当</div>
-    <div class="gold-ribbon">30代女性の「なんとなく不調」に</div>
+    <div class="gold-ribbon">30代女性の腰痛・骨盤・姿勢崩れに</div>
     <h1 class="hero-catch">
-      腰痛・骨盤の歪み・姿勢崩れ<br><span class="accent-line">理学療法士と一緒に</span><br>内側から整える。
+      <span class="accent-line">整体×マシンピラティス</span>で<br>理学療法士が<br>あなたの体を根本から変える。
     </h1>
-    <p class="hero-sub">整体で「歪みを取り」、<br>マシンピラティスで「インナーを鍛える」</p>
+    <p class="hero-sub">まず整体で骨格を整え、<br>次にピラティスで深層筋を鍛える。<br>この順番だから、効果が続く。</p>
     <div class="cta-container" style="width: 100%; padding: 12px 10px 0;">
       <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="btn-main">
         体験 1,100円（50分）を予約する
@@ -1073,6 +1189,56 @@ body { padding-bottom: 76px; }
   <span class="nowrap">国家資格 <strong>理学療法士</strong></span><span class="divider">|</span><span class="nowrap">整体 × <strong>マシンピラティス</strong></span><span class="divider">|</span><span class="nowrap">30代女性 <strong>特化</strong></span>
 </div>
 
+<!-- 2ステップコンセプト -->
+<div class="concept-section reveal">
+  <h2 class="section-title" style="margin-bottom:24px;"><small>CONCEPT</small>W Body 和歌山のアプローチ</h2>
+  <div class="concept-steps">
+
+    <!-- STEP 1 -->
+    <div class="concept-step">
+      <div class="concept-line-wrap">
+        <div class="concept-circle step1">STEP<br>01</div>
+        <div class="concept-connector"></div>
+      </div>
+      <div class="concept-body">
+        <span class="concept-eyebrow">CHIROPRACTIC FIRST</span>
+        <h3>まず<span class="hl">整体</span>で<br>骨格・骨盤を整える</h3>
+        <p>理学療法士が姿勢・骨盤・関節の歪みを評価し、徒手療法で骨格をリセット。体が動きやすい「正しい土台」をつくります。</p>
+        <img src="images/chiro_01.jpg" alt="整体施術" class="concept-img">
+        <span class="concept-result-badge">✓ 痛みが取れる　✓ 動きやすくなる</span>
+      </div>
+    </div>
+
+    <!-- 矢印 -->
+    <div style="display:flex;align-items:center;gap:16px;padding:4px 0 4px;">
+      <div class="concept-arrow">↓</div>
+      <p style="font-size:12.5px;color:var(--accent-deep);font-weight:600;letter-spacing:.04em;">土台が整ったら、次のステップへ</p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="concept-step">
+      <div class="concept-line-wrap">
+        <div class="concept-circle step2">STEP<br>02</div>
+      </div>
+      <div class="concept-body">
+        <span class="concept-eyebrow">MACHINE PILATES NEXT</span>
+        <h3>次に<span class="hl">マシンピラティス</span>で<br>インナーマッスルを鍛える</h3>
+        <p>整えた骨格を「支える筋肉」をリフォーマーで正確に刺激。深層筋が育つことで、姿勢が保たれ再発しない体になります。</p>
+        <img src="images/pilates_04.jpg" alt="マシンピラティス" class="concept-img" style="object-position:center 25%;">
+        <span class="concept-result-badge">✓ 姿勢が変わる　✓ 体型が変わる</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--bg-dark);border-radius:12px;padding:18px 20px;margin-top:24px;text-align:center;">
+    <p style="color:var(--accent-light);font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;line-height:1.7;">
+      整体で「整える」→ ピラティスで「鍛える」<br>
+      <span style="color:#fff;font-size:13px;font-weight:400;font-family:'Noto Sans JP',sans-serif;">この順番があるから、効果が出て、続く。</span>
+    </p>
+  </div>
+</div>
+
 <!-- 口コミ -->
 <div class="p-4 reveal">
   <h2 class="section-title"><small>VOICE</small>体が変わったと感じた方の声</h2>
@@ -1086,8 +1252,8 @@ body { padding-bottom: 76px; }
         <div class="review-meta">肩こり・頭痛・めまいでお悩みの方</div>
       </div>
     </div>
-    <div class="review-headline">施術後は肩が軽く、ぐっすり眠れています！！</div>
-    <p>肩こりがひどく頭痛やめまいに悩んでいましたが、施術してもらってからは肩を軽くぐっすり眠れています！！</p>
+    <div class="review-headline">慢性的な肩こりと頭痛が消えて、夜もぐっすり眠れるように！</div>
+    <p>ひどい肩こりから頭痛・めまいまで出ていたのですが、整体でしっかり骨格を整えてもらってからピラティスで体幹を鍛えると、みるみる体が軽くなりました。今では肩の重さを感じることもなく、毎晩ぐっすり眠れています。あんなに悩んでいたのが嘘みたいです！！</p>
   </div>
 
   <div class="review-card">
@@ -1096,11 +1262,11 @@ body { padding-bottom: 76px; }
       <div>
         <div class="review-name">お客様の声</div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">体幹強化・姿勢改善でお悩みの方</div>
+        <div class="review-meta">姿勢改善・体型変化でお悩みの方</div>
       </div>
     </div>
-    <div class="review-headline">背中がスッキリ、ハリのあるバストに。ヒップも上がりました！</div>
-    <p>先生の分かりやすい説明と前向きなアドバイスのおかげで根気強く続けられています。体幹や腰筋がついてくると体を動かす事が楽になり、家でのストレッチも始めました。背中がスッキリハリのあるバストになりヒップも上がりました。ピラティスをがんばって、素敵にウェディングドレスを着たいと思います！♡</p>
+    <div class="review-headline">背中がスッキリ、ヒップUP。姿勢が変わったね！と言われるように。</div>
+    <p>先生の分かりやすい説明と前向きなアドバイスのおかげで根気強く続けられています。整体で骨盤を整えてからピラティスをすると体を動かすことが楽になり、体型も少しずつ変化。背中がスッキリしてハリのあるバストになり、ヒップも上がりました。周りから「姿勢よくなったね」「なんか変わった？」と言われることが増えました。ウェディングドレスを素敵に着るという目標に向けて、これからも頑張ります！♡</p>
   </div>
 
   <div class="review-card">
@@ -1109,11 +1275,11 @@ body { padding-bottom: 76px; }
       <div>
         <div class="review-name">お客様の声</div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-meta">全身のねじれ・ゆがみでお悩みの方</div>
+        <div class="review-meta">腰痛・全身のゆがみでお悩みの方</div>
       </div>
     </div>
-    <div class="review-headline">肩・腰・全身のねじれがとれました！</div>
-    <p>肩・腰・全身のねじれがとれました。絶対にほぐし加減と元の見直しを含めたひと言がいいです！！</p>
+    <div class="review-headline">長年の腰痛と全身のねじれが取れて、体が楽になりました！</div>
+    <p>長年悩んでいた腰の痛みと体全体のねじれ感が、ここに通うようになってからみるみる改善されました。整体で原因となっているゆがみをほぐしてもらい、その後ピラティスで正しい姿勢を体に覚えさせる流れが本当に効果的。痛みが取れるだけでなく、見た目の姿勢まで変わったと家族にも言われました！！</p>
   </div>
 
   <p class="text-center" style="font-size:12px; color:#888; margin-top:4px;">※個人の感想であり、効果には個人差があります</p>
