@@ -977,6 +977,269 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 }
 .limited-banner small { display: block; font-size: 11px; font-weight: normal; margin-top: 3px; opacity: .9; }
 
+/* ─── 初回体験 2種類カード ─── */
+.trial-head { text-align: center; margin: 6px 0 18px; }
+.trial-eyebrow {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 11.5px;
+  letter-spacing: .4em;
+  color: var(--accent-deep);
+  margin-bottom: 6px;
+}
+.trial-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(18px, 5.2vw, 22px);
+  font-weight: 700;
+  color: var(--main-dark);
+  margin-bottom: 4px;
+  letter-spacing: .03em;
+}
+.trial-title small {
+  font-size: 60%;
+  font-weight: 500;
+  color: var(--text-soft);
+  margin-left: 2px;
+}
+.trial-lead {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  letter-spacing: .02em;
+}
+.trial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+.trial-card {
+  position: relative;
+  background: #fff;
+  border: 1.5px solid #eadbcf;
+  border-radius: 16px;
+  padding: 22px 20px 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(168,110,96,.1);
+}
+.trial-card--recommend {
+  border-color: var(--accent);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(234,207,190,.4), transparent 55%),
+    #fff8f2;
+  box-shadow: 0 14px 32px rgba(168,110,96,.22);
+}
+.trial-badge {
+  position: absolute;
+  top: -13px; left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  color: #fff;
+  padding: 5px 18px;
+  border-radius: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  box-shadow: 0 5px 12px rgba(168,110,96,.4);
+  white-space: nowrap;
+}
+.trial-tag {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 10.5px;
+  letter-spacing: .38em;
+  color: var(--accent-deep);
+  margin-bottom: 8px;
+}
+.trial-card h4 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(15.5px, 4.4vw, 18px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--main-dark);
+  margin-bottom: 10px;
+  letter-spacing: .02em;
+}
+.trial-card h4 .hl {
+  background: linear-gradient(transparent 65%, rgba(212,138,146,.55) 65%);
+  padding: 0 3px;
+  color: var(--accent-deep);
+}
+.trial-card .price-old {
+  font-size: 13px;
+  margin-bottom: 2px;
+  display: block;
+}
+.trial-card .price-new {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+.trial-list {
+  list-style: none;
+  padding: 12px 14px;
+  background: var(--bg-light);
+  border-radius: 10px;
+  text-align: left;
+}
+.trial-list li {
+  padding: 4px 0 4px 22px;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  position: relative;
+}
+.trial-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 4px;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+/* ─── サブスク料金表 ─── */
+.sub-head { text-align: center; margin: 8px 0 16px; }
+.sub-eyebrow {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 11.5px;
+  letter-spacing: .4em;
+  color: var(--accent-deep);
+  margin-bottom: 6px;
+}
+.sub-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(18px, 5.2vw, 22px);
+  font-weight: 700;
+  color: var(--main-dark);
+  margin-bottom: 6px;
+  letter-spacing: .03em;
+}
+.sub-lead {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  letter-spacing: .02em;
+  line-height: 1.75;
+}
+.sub-table-wrap {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 8px 14px;
+  box-shadow: 0 10px 26px rgba(168,110,96,.14);
+  border: 1px solid rgba(201,154,134,.2);
+  overflow: hidden;
+}
+.sub-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.sub-table th, .sub-table td {
+  padding: 10px 4px;
+  text-align: center;
+  font-size: clamp(11px, 2.9vw, 13px);
+  line-height: 1.3;
+  border-bottom: 1px solid rgba(201,154,134,.15);
+}
+.sub-table thead th {
+  background: linear-gradient(180deg, var(--main) 0%, var(--main-dark) 100%);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 10px 2px;
+  font-family: 'Noto Serif JP', serif;
+  border-bottom: none;
+}
+.sub-table thead th span {
+  font-size: 9.5px;
+  font-weight: 400;
+  opacity: .85;
+  display: inline-block;
+  margin-top: 2px;
+  letter-spacing: .08em;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.sub-table thead th:first-child { border-top-left-radius: 8px; }
+.sub-table thead th:last-child { border-top-right-radius: 8px; }
+.sub-table thead .sub-th-best {
+  background: linear-gradient(180deg, var(--accent-deep) 0%, #8a5240 100%);
+  position: relative;
+}
+.sub-table thead .sub-th-best::after {
+  content: '最もお得';
+  position: absolute;
+  top: -11px; left: 50%;
+  transform: translateX(-50%);
+  background: #ffd36e;
+  color: #3a1f27;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: .06em;
+  box-shadow: 0 3px 8px rgba(85,49,57,.3);
+  white-space: nowrap;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.sub-course {
+  background: var(--bg-light);
+  font-weight: 700;
+  color: var(--main-dark);
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(12px, 3.2vw, 14px) !important;
+  padding: 10px 4px !important;
+}
+.sub-course small {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-soft);
+  margin-top: 2px;
+  letter-spacing: .06em;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.sub-table tbody td {
+  background: #fff;
+  color: var(--main-dark);
+  font-weight: 700;
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(13px, 3.6vw, 16px) !important;
+  letter-spacing: -.01em;
+}
+.sub-table tbody td .yen {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-soft);
+  margin-left: 1px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.sub-table tbody td.sub-best {
+  background: #fff8f2;
+  color: var(--accent-deep);
+  position: relative;
+}
+.sub-table tbody td.sub-best::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-left: 2px solid var(--accent);
+  pointer-events: none;
+}
+.sub-table tbody tr:last-child td,
+.sub-table tbody tr:last-child th { border-bottom: none; }
+.sub-note {
+  font-size: 11px;
+  color: var(--text-soft);
+  letter-spacing: .02em;
+  line-height: 1.7;
+  margin-top: 12px;
+  text-align: center;
+  padding: 0 8px;
+}
+
 /* ─── FAQ ─── */
 .faq-item { border-bottom: 1px solid rgba(201,154,134,.18); background: #fff; }
 .faq-q {
@@ -2121,30 +2384,92 @@ body { padding-bottom: 76px; }
     <small>通常 10,000円 のところ → 体験 1,100円（税込）</small>
   </div>
 
-  <div class="price-card recommend">
-    <div class="price-badge">初めての方 限定</div>
-    <h3>初回体験コース（50分）</h3>
-    <span class="price-old">通常 10,000円</span>
-    <p class="price-new">1,100<span class="yen">円（税込）</span></p>
-    <p class="price-note">期間限定の体験価格です</p>
-    <div class="price-includes">
-      <strong>体験に含まれるもの</strong><br>
-      ✓ カウンセリング<br>
-      ✓ 理学療法士による身体評価<br>
-      ✓ 整体施術<br>
-      ✓ マシンピラティス体験（リフォーマー）
+  <!-- 初回体験 2種類 -->
+  <div class="trial-head">
+    <span class="trial-eyebrow">— FIRST TRIAL —</span>
+    <h3 class="trial-title">初回体験コース<small>（50分）</small></h3>
+    <p class="trial-lead">お好きな内容をお選びいただけます</p>
+  </div>
+
+  <div class="trial-grid">
+    <div class="trial-card">
+      <span class="trial-tag">OPTION A</span>
+      <h4>マシンピラティス<br>体験コース</h4>
+      <span class="price-old">通常 10,000円</span>
+      <p class="price-new">1,100<span class="yen">円</span></p>
+      <ul class="trial-list">
+        <li>カウンセリング</li>
+        <li>理学療法士による身体評価</li>
+        <li>マシンピラティス体験</li>
+      </ul>
+    </div>
+
+    <div class="trial-card trial-card--recommend">
+      <span class="trial-badge">おすすめ</span>
+      <span class="trial-tag">OPTION B</span>
+      <h4>整体 × <span class="hl">マシンピラティス</span><br>体験コース</h4>
+      <span class="price-old">通常 10,000円</span>
+      <p class="price-new">1,100<span class="yen">円</span></p>
+      <ul class="trial-list">
+        <li>カウンセリング</li>
+        <li>理学療法士による身体評価</li>
+        <li>整体施術</li>
+        <li>マシンピラティス体験</li>
+      </ul>
     </div>
   </div>
 
-  <div class="price-card">
-    <h3>通常コース（60分）</h3>
-    <p class="price-new" style="color: var(--main);">10,000<span class="yen">円（税込）</span></p>
-    <p class="price-note">2回目以降はこちらが基本料金となります</p>
-    <div class="price-includes" style="margin-top: 12px;">
-      ✓ 整体 + マシンピラティス<br>
-      ✓ 理学療法士によるマンツーマン指導<br>
-      ✓ 継続通いの方には回数券もあり
-    </div>
+  <!-- サブスク料金表 -->
+  <div class="sub-head">
+    <span class="sub-eyebrow">— MONTHLY PLAN —</span>
+    <h3 class="sub-title">月額サブスクプラン</h3>
+    <p class="sub-lead">通い放題ではなく、月の来店回数で選べる<br>継続しやすい月額プランをご用意しています。</p>
+  </div>
+
+  <div class="sub-table-wrap">
+    <table class="sub-table">
+      <thead>
+        <tr>
+          <th class="sub-th-course">コース</th>
+          <th>6ヶ月<br><span>プラン</span></th>
+          <th>12ヶ月<br><span>プラン</span></th>
+          <th class="sub-th-best">24ヶ月<br><span>プラン</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="sub-course">月3回<br><small>コース</small></th>
+          <td>25,400<span class="yen">円</span></td>
+          <td>23,800<span class="yen">円</span></td>
+          <td class="sub-best">22,000<span class="yen">円</span></td>
+        </tr>
+        <tr>
+          <th class="sub-course">月4回<br><small>コース</small></th>
+          <td>33,200<span class="yen">円</span></td>
+          <td>29,800<span class="yen">円</span></td>
+          <td class="sub-best">27,800<span class="yen">円</span></td>
+        </tr>
+        <tr>
+          <th class="sub-course">月5回<br><small>コース</small></th>
+          <td>38,600<span class="yen">円</span></td>
+          <td>35,400<span class="yen">円</span></td>
+          <td class="sub-best">29,800<span class="yen">円</span></td>
+        </tr>
+        <tr>
+          <th class="sub-course">月6回<br><small>コース</small></th>
+          <td>42,800<span class="yen">円</span></td>
+          <td>39,400<span class="yen">円</span></td>
+          <td class="sub-best">37,200<span class="yen">円</span></td>
+        </tr>
+        <tr>
+          <th class="sub-course">月8回<br><small>コース</small></th>
+          <td>49,800<span class="yen">円</span></td>
+          <td>47,600<span class="yen">円</span></td>
+          <td class="sub-best">45,500<span class="yen">円</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="sub-note">※ 表示価格は全て月額（税込）／ 整体 × マシンピラティス 50分セッション</p>
   </div>
 </div>
 
