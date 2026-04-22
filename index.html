@@ -328,6 +328,28 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
   text-decoration: none;
   letter-spacing: .04em;
 }
+.btn-tel {
+  display: block;
+  background: linear-gradient(180deg, #fff 0%, #fbf0e8 100%);
+  color: var(--main-dark);
+  border: 1.5px solid var(--accent);
+  padding: 13px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: .04em;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(168,110,96,.15);
+}
+.btn-tel small {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-deep);
+  margin-top: 3px;
+  letter-spacing: .08em;
+}
 @keyframes pulse {
   0%   { box-shadow: 0 8px 22px rgba(168,110,96,.4), inset 0 1px 0 rgba(255,255,255,.35), 0 0 0 0 rgba(212,138,146,.55); }
   70%  { box-shadow: 0 8px 22px rgba(168,110,96,.4), inset 0 1px 0 rgba(255,255,255,.35), 0 0 0 14px rgba(212,138,146,0); }
@@ -386,6 +408,16 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   font-weight: 500;
   font-style: italic;
   text-transform: uppercase;
+}
+
+/* ─── 口コミバナー ─── */
+.review-banner {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 12px 28px rgba(168,110,96,.18);
+  display: block;
+  height: auto;
 }
 
 /* ─── 口コミ ─── */
@@ -991,15 +1023,22 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   z-index: 200;
   box-shadow: 0 -4px 18px rgba(58,31,39,.3);
 }
-.sticky-line, .sticky-main {
+.sticky-line, .sticky-main, .sticky-tel {
   flex: 1;
   text-align: center;
   text-decoration: none;
   border-radius: 10px;
-  padding: 11px 6px;
-  font-size: clamp(13px, 3.6vw, 15px);
+  padding: 10px 4px;
+  font-size: clamp(12px, 3.3vw, 14px);
   font-weight: 700;
   line-height: 1.2;
+}
+.sticky-tel {
+  flex: 0.55;
+  background: #fff;
+  color: var(--main-dark);
+  border: 1.5px solid var(--accent);
+  font-size: 18px;
 }
 .sticky-line {
   background: #00B900;
@@ -1010,11 +1049,11 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   color: #fff;
   text-shadow: 0 1px 2px rgba(85,49,57,.35);
 }
-.sticky-line small, .sticky-main small {
+.sticky-line small, .sticky-main small, .sticky-tel small {
   display: block;
-  font-size: clamp(10px, 2.8vw, 11.5px);
-  font-weight: 400;
-  opacity: .9;
+  font-size: clamp(9px, 2.6vw, 10.5px);
+  font-weight: 500;
+  opacity: .95;
   margin-top: 2px;
 }
 
@@ -1138,6 +1177,145 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   letter-spacing: .03em;
 }
 
+/* ─── インフルエンサー絶賛 ─── */
+.influencer-section {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(234,207,190,.4), transparent 55%),
+    radial-gradient(circle at 90% 100%, rgba(212,138,146,.18), transparent 55%),
+    #fbf5ef;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.influencer-title-block { text-align: center; margin-bottom: 22px; }
+.influencer-eyebrow {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: .35em;
+  color: var(--accent-deep);
+  margin-bottom: 10px;
+}
+.influencer-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(19px, 5.2vw, 24px);
+  font-weight: 700;
+  color: var(--main-dark);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.influencer-title .hl-gold {
+  background: linear-gradient(transparent 62%, rgba(201,162,75,.4) 62%);
+  padding: 0 4px;
+  color: var(--accent-deep);
+}
+.influencer-lead {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+.influencer-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(201,154,134,.2);
+  box-shadow: 0 8px 22px rgba(85,49,57,.1);
+  position: relative;
+  overflow: hidden;
+}
+.influencer-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, #f58529, #dd2a7b, #8134af);
+}
+.influencer-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.influencer-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  padding: 2.5px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+}
+.influencer-avatar-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 22px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
+.influencer-info { flex: 1; min-width: 0; }
+.influencer-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--main-dark);
+  line-height: 1.3;
+  letter-spacing: .02em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.influencer-name .verified {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: #3ba9f5;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+}
+.influencer-handle {
+  font-size: 11.5px;
+  color: var(--text-soft);
+  letter-spacing: .02em;
+  margin-top: 1px;
+}
+.influencer-followers {
+  font-size: 11px;
+  color: var(--accent-deep);
+  margin-top: 3px;
+  letter-spacing: .03em;
+}
+.influencer-followers strong {
+  color: var(--main-dark);
+  font-weight: 700;
+  font-size: 12px;
+}
+.influencer-ig-logo {
+  flex-shrink: 0;
+  opacity: .95;
+}
+.influencer-text {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--text);
+  padding: 12px 14px;
+  background: #fdf6ef;
+  border-radius: 10px;
+  position: relative;
+}
+.influencer-text strong {
+  color: var(--main-dark);
+  background: linear-gradient(transparent 65%, rgba(212,138,146,.35) 65%);
+  padding: 0 2px;
+  font-weight: 700;
+}
+
 /* ─── ボディ下部の余白（スティッキーCTA分）─── */
 body { padding-bottom: 76px; }
 </style>
@@ -1160,7 +1338,7 @@ body { padding-bottom: 76px; }
   <div class="hero-content">
     <div class="hero-tag">整体 × マシンピラティス 専門</div>
     <div class="badge-stamp">国家資格<br>理学療法士<br>担当</div>
-    <div class="gold-ribbon">30代女性の腰痛・骨盤・姿勢崩れに</div>
+    <div class="gold-ribbon">腰痛・骨盤・姿勢・引き締めに</div>
     <h1 class="hero-catch">
       <span class="accent-line">整体×マシンピラティス</span>で<br>理学療法士が<br>あなたの体を根本から変える。
     </h1>
@@ -1190,12 +1368,12 @@ body { padding-bottom: 76px; }
 
 <!-- 信頼バー -->
 <div class="trust-bar">
-  <span class="nowrap">国家資格 <strong>理学療法士</strong></span><span class="divider">|</span><span class="nowrap">整体 × <strong>マシンピラティス</strong></span><span class="divider">|</span><span class="nowrap">30代女性 <strong>特化</strong></span>
+  <span class="nowrap">国家資格 <strong>理学療法士</strong></span><span class="divider">|</span><span class="nowrap">整体 × <strong>マシンピラティス</strong></span><span class="divider">|</span><span class="nowrap">女性のための<strong>引き締め</strong></span>
 </div>
 
 <!-- 口コミ -->
 <div class="p-4 reveal">
-  <h2 class="section-title"><small>VOICE</small>お客様の声</h2>
+  <img src="images/reviews_banner.jpg" alt="お客様の声" class="review-banner" loading="lazy">
 
   <div class="review-card">
     <div class="review-header">
@@ -1294,8 +1472,8 @@ body { padding-bottom: 76px; }
         </div>
         <div>
           <span class="feature-title-en">WOMEN'S PROGRAM</span>
-          <h4 class="feature-title">30代女性<br><span class="hl">専用プログラム</span></h4>
-          <p class="feature-sub">産後・骨盤・姿勢を熟知したメニュー設計。</p>
+          <h4 class="feature-title">女性のための<br><span class="hl">引き締め</span>プログラム</h4>
+          <p class="feature-sub">骨盤・姿勢・体型悩みに特化したメニュー設計。</p>
         </div>
       </div>
     </div>
@@ -1336,7 +1514,8 @@ body { padding-bottom: 76px; }
 <div class="cta-container reveal">
   <h3 class="mb-2" style="font-size:17px;">まずは <span class="gold-text" style="font-size:22px;">1,100円</span> で体験。</h3>
   <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="btn-main">体験 1,100円（50分）を予約する<small>▶ 通常 10,000円 → 期間限定価格</small></a>
-  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-sub">LINEで体の状態を相談する</a>
+  <a href="https://lin.ee/xv3jHYBn" target="_blank" rel="noopener" class="btn-sub">LINEで体の状態を相談する</a>
+  <a href="tel:08040847872" class="btn-tel">📞 お電話はこちら<small>080-4084-7872</small></a>
 </div>
 
 <!-- おすすめの方 -->
@@ -1544,6 +1723,60 @@ body { padding-bottom: 76px; }
   </div>
 </div>
 
+<!-- インフルエンサー絶賛 -->
+<div class="p-4 reveal influencer-section">
+  <div class="influencer-title-block">
+    <span class="influencer-eyebrow">— INFLUENCERS —</span>
+    <h2 class="influencer-title">インフルエンサーからも<br><span class="hl-gold">絶賛されています</span></h2>
+    <p class="influencer-lead">業界の第一線で活躍する専門家からも<br>高い評価をいただいています。</p>
+  </div>
+
+  <div class="influencer-card">
+    <div class="influencer-header">
+      <div class="influencer-avatar"><div class="influencer-avatar-inner" style="background:linear-gradient(135deg,#f9d4b4,#e8a7b0);">K</div></div>
+      <div class="influencer-info">
+        <div class="influencer-name">kayo <span class="verified">✓</span></div>
+        <div class="influencer-handle">小顔ダイエットの専門家</div>
+        <div class="influencer-followers">総フォロワー <strong>20万人</strong></div>
+      </div>
+      <div class="influencer-ig-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26"><defs><linearGradient id="ig1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f58529"/><stop offset=".5" stop-color="#dd2a7b"/><stop offset="1" stop-color="#8134af"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig1)"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="#fff"/></svg>
+      </div>
+    </div>
+    <p class="influencer-text">整体では、根本的な症状・原因に合わせた施術を行ってくれる。ピラティスでは、的確な指示で分かりやすく指導してくれる。<strong>唯一無二の信頼できる先生</strong>です。</p>
+  </div>
+
+  <div class="influencer-card">
+    <div class="influencer-header">
+      <div class="influencer-avatar"><div class="influencer-avatar-inner" style="background:linear-gradient(135deg,#a8c4e8,#6b8cb8);">T</div></div>
+      <div class="influencer-info">
+        <div class="influencer-name">たなか学長 <span class="verified">✓</span></div>
+        <div class="influencer-handle">日本1老けない若返りケア</div>
+        <div class="influencer-followers">総フォロワー <strong>35万人</strong></div>
+      </div>
+      <div class="influencer-ig-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26"><rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig1)"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="#fff"/></svg>
+      </div>
+    </div>
+    <p class="influencer-text">治療技術・経験に加え、しっかり"人"を診て、寄り添ってくれる信頼できる先生です。<strong>プロの施術家・トレーナーからも一目置かれてる存在</strong>なので、和歌山の人はぜひ頼って下さい。</p>
+  </div>
+
+  <div class="influencer-card">
+    <div class="influencer-header">
+      <div class="influencer-avatar"><div class="influencer-avatar-inner" style="background:linear-gradient(135deg,#d4e8a8,#8fb47c);">K</div></div>
+      <div class="influencer-info">
+        <div class="influencer-name">かつや先生 <span class="verified">✓</span></div>
+        <div class="influencer-handle">40代からの若返り専門家</div>
+        <div class="influencer-followers">総フォロワー <strong>3万人</strong></div>
+      </div>
+      <div class="influencer-ig-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26"><rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig1)"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="#fff"/></svg>
+      </div>
+    </div>
+    <p class="influencer-text">すごく勉強熱心で、<strong>お客様を常に一番に考えている先生</strong>です。私も実際に施術とピラティスを受けて、慢性的に悩んでいた症状も本当に体が楽になったので、仕事や家事で疲れてる人や、運動習慣をつけたい方にもおすすめです！</p>
+  </div>
+</div>
+
 <!-- CTA 3 -->
 <div class="cta-container reveal">
   <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="btn-outline">空き状況を確認する</a>
@@ -1689,12 +1922,14 @@ body { padding-bottom: 76px; }
     体験 1,100円（50分）を予約する
     <small>▶ 通常 10,000円 → 期間限定価格</small>
   </a>
-  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
+  <a href="https://lin.ee/xv3jHYBn" target="_blank" rel="noopener" class="btn-sub" style="margin-top:14px;">LINEで相談だけでもOK</a>
+  <a href="tel:08040847872" class="btn-tel" style="margin-top:10px;">📞 お電話はこちら<small>080-4084-7872</small></a>
 </div>
 
 <!-- スティッキーCTA -->
 <div class="sticky-cta">
-  <a href="https://lin.ee/9KEL4Bw" target="_blank" rel="noopener" class="sticky-line">LINE相談<small>気軽に相談OK</small></a>
+  <a href="tel:08040847872" class="sticky-tel">📞<small>電話</small></a>
+  <a href="https://lin.ee/xv3jHYBn" target="_blank" rel="noopener" class="sticky-line">LINE<small>相談OK</small></a>
   <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="sticky-main">WEB予約<small>体験 1,100円</small></a>
 </div>
 
