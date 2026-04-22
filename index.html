@@ -1091,19 +1091,48 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 
 /* TITLE + DURATION */
 .trial-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(16px, 4.4vw, 21px);
-  font-weight: 700;
-  line-height: 1.25;
   color: var(--main-dark);
   margin: 0;
-  letter-spacing: 0;
   text-align: center;
+}
+.trial-title-main {
+  font-size: clamp(19px, 5.5vw, 24px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: .02em;
   white-space: nowrap;
 }
+.trial-title-sub {
+  font-size: clamp(15px, 4vw, 18px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text-soft);
+  letter-spacing: .08em;
+  white-space: nowrap;
+  margin-top: 1px;
+  position: relative;
+  padding: 0 16px;
+}
+.trial-title-sub::before,
+.trial-title-sub::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 1px;
+  background: var(--accent);
+  opacity: .6;
+}
+.trial-title-sub::before { left: 0; }
+.trial-title-sub::after { right: 0; }
 .trial-title .hl {
-  background: linear-gradient(transparent 60%, rgba(212,138,146,.55) 60%);
-  padding: 0 4px;
+  background: linear-gradient(transparent 62%, rgba(212,138,146,.55) 62%);
+  padding: 0 3px;
   color: var(--accent-deep);
 }
 .trial-duration {
@@ -2613,7 +2642,7 @@ body { padding-bottom: 76px; }
         <span class="trial-tag">OPTION A</span>
         <p class="trial-sub">しっかり動きたい方に</p>
       </div>
-      <h4 class="trial-title">マシンピラティス体験コース</h4>
+      <h4 class="trial-title"><span class="trial-title-main">マシンピラティス</span><span class="trial-title-sub">体験コース</span></h4>
       <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
 
       <div class="trial-price">
@@ -2643,7 +2672,7 @@ body { padding-bottom: 76px; }
         <span class="trial-tag">OPTION B</span>
         <p class="trial-sub">痛み・不調もしっかりケア</p>
       </div>
-      <h4 class="trial-title">整体×<span class="hl">マシンピラティス</span>体験コース</h4>
+      <h4 class="trial-title"><span class="trial-title-main">整体 × <span class="hl">マシンピラティス</span></span><span class="trial-title-sub">体験コース</span></h4>
       <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
 
       <div class="trial-price">
