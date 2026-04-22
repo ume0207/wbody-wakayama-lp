@@ -115,7 +115,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
 .hero-content {
   position: relative;
   z-index: 1;
-  min-height: 600px;
+  min-height: 680px;
   background:
     radial-gradient(circle at 85% 18%, rgba(234,207,190,0.3), transparent 55%),
     linear-gradient(180deg, rgba(85,49,57,0.2) 0%, rgba(85,49,57,0.5) 45%, rgba(58,31,39,0.94) 100%);
@@ -124,12 +124,12 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
   justify-content: flex-start;
   align-items: center;
   color: #fff;
-  padding: 60px 16px 0;
+  padding: 78px 16px 18px;
 }
 .hero-content::before {
   content: '';
   position: absolute;
-  top: 56px; left: 50%;
+  top: 72px; left: 50%;
   transform: translateX(-50%);
   width: 40px; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(234,207,190,.85), transparent);
@@ -175,7 +175,7 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
   transform: rotate(-3deg);
   transform-origin: left center;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   font-size: clamp(12px, 3.4vw, 14px);
   letter-spacing: .03em;
   box-shadow: 0 3px 12px rgba(85,49,57,.35);
@@ -204,7 +204,26 @@ img, iframe, video { max-width: 100%; display: block; height: auto; }
   margin-bottom: 12px;
   text-shadow: 1px 1px 4px #000;
   text-align: center;
-  line-height: 1.55;
+  line-height: 1.7;
+}
+.hero-sub-flow {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(13px, 3.7vw, 17px);
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #fff;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(234,207,190,.55);
+  margin-bottom: 6px;
+}
+.hero-sub-flow .arrow {
+  color: var(--accent-light);
+  font-weight: 700;
+  margin: 0 6px;
+  font-size: 1.05em;
+  text-shadow: 0 0 8px rgba(234,207,190,.6);
 }
 .hero-points {
   display: grid;
@@ -1541,7 +1560,7 @@ body { padding-bottom: 76px; }
     <h1 class="hero-catch">
       <span class="accent-line">整体×マシンピラティス</span>で<br>理学療法士が<br>あなたの体を根本から変える。
     </h1>
-    <p class="hero-sub">整体で整える → ピラティスで鍛える。<br>この順番だから、効果が続く。</p>
+    <p class="hero-sub"><span class="hero-sub-flow">整体で整える <span class="arrow">→</span> ピラティスで鍛える。</span><br>この順番だから、効果が続く。</p>
     <div class="cta-container" style="width: 100%; padding: 12px 10px 0;">
       <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="btn-main">
         体験 1,100円（50分）を予約する
@@ -1619,7 +1638,7 @@ body { padding-bottom: 76px; }
 
   <div class="twostep-result">
     <span class="twostep-result-eyebrow">RESULT</span>
-    <p>整体 × ピラティスの「いいとこ取り」で<br><strong>戻らない体</strong>へ。</p>
+    <p>整体 × ピラティスの<br>「いいとこ取り」で、<strong>戻らない体</strong>へ。</p>
   </div>
 </div>
 
