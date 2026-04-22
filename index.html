@@ -1010,26 +1010,32 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 .trial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 22px;
-  margin-bottom: 30px;
+  gap: 24px;
+  margin-bottom: 32px;
 }
 .trial-card {
   position: relative;
   display: block;
-  background: #fff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(85,49,57,.18);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(234,207,190,.25), transparent 55%),
+    #fff;
+  border: 1px solid rgba(201,154,134,.3);
+  border-radius: 16px;
+  padding: 26px 22px 22px;
   text-decoration: none;
   color: inherit;
-  transition: transform .3s ease, box-shadow .3s ease;
-  border: 1px solid rgba(201,154,134,.2);
+  box-shadow: 0 10px 26px rgba(85,49,57,.12);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.trial-card:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(85,49,57,.28); }
+.trial-card:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(85,49,57,.2); }
 .trial-card--recommend {
   border: 2px solid var(--accent);
-  box-shadow: 0 18px 42px rgba(168,110,96,.32);
-  margin-top: 10px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(234,207,190,.45), transparent 55%),
+    radial-gradient(circle at 0% 100%, rgba(212,138,146,.12), transparent 55%),
+    #fff8f0;
+  box-shadow: 0 18px 40px rgba(168,110,96,.28);
+  margin-top: 12px;
 }
 .trial-badge {
   position: absolute;
@@ -1041,182 +1047,234 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   border-radius: 22px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: .12em;
-  box-shadow: 0 6px 16px rgba(168,110,96,.5), inset 0 1px 0 rgba(255,255,255,.25);
+  letter-spacing: .1em;
+  box-shadow: 0 6px 16px rgba(168,110,96,.5), inset 0 1px 0 rgba(255,255,255,.3);
   white-space: nowrap;
   z-index: 3;
 }
 
-/* HERO image header */
-.trial-hero {
-  position: relative;
-  aspect-ratio: 16 / 7;
-  background-size: cover;
-  background-position: center 30%;
-}
-.trial-hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(180deg, rgba(85,49,57,.2) 0%, rgba(58,31,39,.5) 60%, rgba(40,20,26,.9) 100%),
-    linear-gradient(90deg, rgba(40,20,26,.35), rgba(85,49,57,.1));
-}
-.trial-hero-overlay {
-  position: absolute; inset: 0;
-  padding: 14px 18px;
+/* TOP: tag + sub tagline */
+.trial-top {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: #fff;
-  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(201,154,134,.25);
 }
 .trial-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 11px;
-  letter-spacing: .35em;
-  color: var(--accent-light);
-  padding-bottom: 4px;
-  align-self: flex-start;
-  border-bottom: 1px solid rgba(234,207,190,.5);
-  margin-bottom: 6px;
-}
-.trial-card h4 {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(19px, 5.4vw, 22px);
-  font-weight: 700;
-  line-height: 1.35;
-  color: #fff;
-  margin: 0;
-  letter-spacing: .03em;
-  text-shadow: 0 2px 10px rgba(0,0,0,.45);
-}
-.trial-card h4 .hl {
-  background: linear-gradient(transparent 60%, rgba(201,154,134,.75) 60%);
-  padding: 0 4px;
-  color: #fff;
-}
-.trial-hero-meta {
-  font-size: 11.5px;
-  margin-top: 6px;
-  letter-spacing: .12em;
-  color: var(--accent-light);
-  font-weight: 500;
-  text-shadow: 0 1px 4px rgba(0,0,0,.5);
-}
-
-/* BODY */
-.trial-body {
-  padding: 16px 16px 18px;
-  background: #fff;
-}
-.trial-card--recommend .trial-body {
-  background:
-    radial-gradient(circle at 100% 100%, rgba(234,207,190,.35), transparent 55%),
-    #fff9f2;
-}
-
-/* PRICE ROW - compact horizontal */
-.trial-price-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 10px;
-  background: linear-gradient(135deg, #fef8f1, #fff);
-  border: 1px solid rgba(201,154,134,.25);
-  border-radius: 10px;
-  margin-bottom: 12px;
-  flex-wrap: nowrap;
-}
-.trial-price-old {
-  font-family: 'Noto Sans JP', sans-serif;
   font-size: 13px;
+  letter-spacing: .34em;
+  color: var(--accent-deep);
+  padding: 4px 10px 4px 0;
+  position: relative;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.trial-tag::before {
+  content: '';
+  width: 18px; height: 1px;
+  background: var(--accent-deep);
+  margin-right: 10px;
+}
+.trial-sub {
+  font-size: 11.5px;
   color: var(--text-soft);
-  text-decoration: line-through;
-  opacity: .6;
-  letter-spacing: -.01em;
-  flex-shrink: 0;
+  letter-spacing: .04em;
+  text-align: right;
+  line-height: 1.4;
 }
-.trial-price-arrow {
-  font-size: 15px;
-  color: var(--accent);
-  font-weight: 700;
-  line-height: 1;
-  flex-shrink: 0;
-}
-.trial-price-new {
+
+/* TITLE */
+.trial-title {
   font-family: 'Noto Serif JP', serif;
+  font-size: clamp(22px, 6.4vw, 26px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--main-dark);
+  margin: 0 0 14px;
+  letter-spacing: .02em;
+  text-align: center;
+}
+.trial-title .hl {
+  background: linear-gradient(transparent 60%, rgba(212,138,146,.55) 60%);
+  padding: 0 4px;
+  color: var(--accent-deep);
+}
+
+/* DURATION - BIGGER */
+.trial-duration {
+  text-align: center;
+  margin-bottom: 22px;
+  font-family: 'Noto Serif JP', serif;
+  color: var(--main);
+  font-weight: 600;
+  letter-spacing: .02em;
+  font-size: 18px;
+}
+.trial-duration span {
+  font-size: 36px;
   font-weight: 700;
   color: var(--accent-deep);
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 1;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 2px;
-}
-.trial-price-new em {
-  font-style: normal;
-  font-size: clamp(30px, 8.5vw, 38px);
-  font-weight: 800;
   letter-spacing: -.02em;
-  color: var(--accent-deep);
-  background: linear-gradient(135deg, #b66a50, #a86e60);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-right: 1px;
+  margin-right: 2px;
+  font-family: 'Noto Serif JP', serif;
 }
-.trial-price-new small {
-  font-size: 10px;
+.trial-duration small {
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-soft);
   margin-left: 4px;
-  padding: 2px 6px;
-  border: 1px solid rgba(201,154,134,.4);
-  border-radius: 3px;
-  letter-spacing: .06em;
   font-family: 'Noto Sans JP', sans-serif;
-  align-self: center;
+  letter-spacing: .04em;
 }
 
-/* LIST */
-.trial-list {
-  list-style: none;
-  padding: 10px 12px;
-  background: var(--bg-light);
-  border-radius: 8px;
-  margin-bottom: 14px;
-}
-.trial-list li {
-  padding: 4px 0 4px 22px;
-  font-size: 13px;
-  color: var(--text);
-  line-height: 1.55;
+/* PRICE - large & prominent, no nested box */
+.trial-price {
+  text-align: center;
+  padding: 18px 0 20px;
+  margin-bottom: 18px;
+  border-top: 1px dashed rgba(201,154,134,.4);
+  border-bottom: 1px dashed rgba(201,154,134,.4);
   position: relative;
 }
-.trial-list li + li { border-top: 1px dotted rgba(201,154,134,.25); }
-.trial-list li::before {
+.trial-price-old {
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+  letter-spacing: -.01em;
+  font-weight: 500;
+}
+.trial-price-old em {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  color: var(--text-soft);
+}
+.trial-price-arrow {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  color: var(--accent-deep);
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 1;
+  animation: trialPriceArrow 1.8s ease-in-out infinite;
+}
+.trial-price-arrow small {
+  display: inline-block;
+  background: linear-gradient(135deg, #e85a5a, #c94545);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  box-shadow: 0 3px 10px rgba(232,90,90,.35);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+@keyframes trialPriceArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+.trial-price-new {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  color: var(--accent-deep);
+  font-family: 'Noto Serif JP', serif;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.trial-price-new em {
+  font-style: normal;
+  font-size: clamp(56px, 16vw, 72px);
+  font-weight: 800;
+  background: linear-gradient(135deg, #b66a50, var(--accent-deep) 60%, #8a5240);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 2px;
+}
+.trial-price-new span {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--main-dark);
+  letter-spacing: 0;
+}
+.trial-price-new span small {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-soft);
+  margin-left: 2px;
+  letter-spacing: .04em;
+}
+
+/* INCLUDES - no nested card, flat with label */
+.trial-includes {
+  margin-bottom: 18px;
+  padding: 0 4px;
+}
+.trial-includes-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  color: var(--accent-deep);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.trial-includes-label::before,
+.trial-includes-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(201,154,134,.35);
+}
+.trial-includes ul {
+  list-style: none;
+  padding: 0;
+}
+.trial-includes li {
+  padding: 5px 0 5px 26px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+  position: relative;
+}
+.trial-includes li::before {
   content: '✓';
   position: absolute;
-  left: 0;
-  top: 5px;
-  width: 16px;
-  height: 16px;
+  left: 2px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
   background: var(--accent-deep);
   color: #fff;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 11px;
   border-radius: 50%;
   text-align: center;
-  line-height: 16px;
+  line-height: 18px;
 }
-.trial-list li strong {
+.trial-includes li strong {
   color: var(--accent-deep);
   font-weight: 700;
-  background: linear-gradient(transparent 70%, rgba(212,138,146,.35) 70%);
+  background: linear-gradient(transparent 68%, rgba(212,138,146,.4) 68%);
   padding: 0 2px;
 }
 
@@ -1225,20 +1283,20 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   background: #fff;
   color: var(--main-dark);
   border: 1.5px solid var(--accent);
-  padding: 12px 14px;
-  border-radius: 10px;
-  font-size: 14.5px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: .03em;
+  letter-spacing: .04em;
   transition: all .25s ease;
 }
 .trial-cta em {
   font-style: normal;
-  font-size: 17px;
+  font-size: 20px;
   color: var(--accent-deep);
   transition: transform .25s ease;
 }
@@ -1247,16 +1305,16 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   background: linear-gradient(180deg, #eacfbe, #c99a86 55%, #a86e60);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 10px 22px rgba(168,110,96,.42), inset 0 1px 0 rgba(255,255,255,.3);
-  font-size: 15.5px;
-  padding: 14px 14px;
+  box-shadow: 0 12px 26px rgba(168,110,96,.45), inset 0 1px 0 rgba(255,255,255,.3);
+  font-size: 16.5px;
+  padding: 16px 16px;
   text-shadow: 0 1px 2px rgba(85,49,57,.35);
   animation: trialCtaPulse 2.4s ease-in-out infinite;
 }
 .trial-cta--primary em { color: #fff; }
 @keyframes trialCtaPulse {
-  0%, 100% { box-shadow: 0 10px 22px rgba(168,110,96,.42), inset 0 1px 0 rgba(255,255,255,.3); }
-  50% { box-shadow: 0 10px 22px rgba(168,110,96,.42), inset 0 1px 0 rgba(255,255,255,.3), 0 0 0 6px rgba(212,138,146,.18); }
+  0%, 100% { box-shadow: 0 12px 26px rgba(168,110,96,.45), inset 0 1px 0 rgba(255,255,255,.3); }
+  50% { box-shadow: 0 12px 26px rgba(168,110,96,.45), inset 0 1px 0 rgba(255,255,255,.3), 0 0 0 8px rgba(212,138,146,.18); }
 }
 
 /* ─── サブスク料金表 ─── */
@@ -2555,51 +2613,57 @@ body { padding-bottom: 76px; }
 
   <div class="trial-grid">
     <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="trial-card">
-      <div class="trial-hero" style="background-image: url('images/pilates_03.jpg');">
-        <div class="trial-hero-overlay">
-          <span class="trial-tag">OPTION A</span>
-          <h4>マシンピラティス<br>体験コース</h4>
-          <div class="trial-hero-meta">50分・マンツーマン</div>
-        </div>
+      <div class="trial-top">
+        <span class="trial-tag">OPTION A</span>
+        <p class="trial-sub">しっかり動きたい方に</p>
       </div>
-      <div class="trial-body">
-        <div class="trial-price-row">
-          <span class="trial-price-old">10,000円</span>
-          <span class="trial-price-arrow">→</span>
-          <span class="trial-price-new"><em>1,100</em>円<small>税込</small></span>
-        </div>
-        <ul class="trial-list">
+      <h4 class="trial-title">マシンピラティス<br>体験コース</h4>
+      <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
+
+      <div class="trial-price">
+        <span class="trial-price-old">通常 <em>10,000</em>円</span>
+        <div class="trial-price-arrow">↓<small>特別価格</small></div>
+        <div class="trial-price-new"><em>1,100</em><span>円<small>（税込）</small></span></div>
+      </div>
+
+      <div class="trial-includes">
+        <div class="trial-includes-label">体験に含まれるもの</div>
+        <ul>
           <li>カウンセリング</li>
           <li>理学療法士による身体評価</li>
           <li>マシンピラティス体験</li>
         </ul>
-        <span class="trial-cta">このコースを予約する <em>→</em></span>
       </div>
+
+      <span class="trial-cta">このコースを予約する <em>→</em></span>
     </a>
 
     <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="trial-card trial-card--recommend">
       <span class="trial-badge">★ 一番人気・おすすめ ★</span>
-      <div class="trial-hero" style="background-image: url('images/pilates_06.jpg');">
-        <div class="trial-hero-overlay">
-          <span class="trial-tag">OPTION B</span>
-          <h4>整体 × <span class="hl">ピラティス</span><br>体験コース</h4>
-          <div class="trial-hero-meta">50分・マンツーマン</div>
-        </div>
+      <div class="trial-top">
+        <span class="trial-tag">OPTION B</span>
+        <p class="trial-sub">痛み・不調もしっかりケア</p>
       </div>
-      <div class="trial-body">
-        <div class="trial-price-row">
-          <span class="trial-price-old">10,000円</span>
-          <span class="trial-price-arrow">→</span>
-          <span class="trial-price-new"><em>1,100</em>円<small>税込</small></span>
-        </div>
-        <ul class="trial-list">
+      <h4 class="trial-title">整体 × <span class="hl">ピラティス</span><br>体験コース</h4>
+      <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
+
+      <div class="trial-price">
+        <span class="trial-price-old">通常 <em>10,000</em>円</span>
+        <div class="trial-price-arrow">↓<small>特別価格</small></div>
+        <div class="trial-price-new"><em>1,100</em><span>円<small>（税込）</small></span></div>
+      </div>
+
+      <div class="trial-includes">
+        <div class="trial-includes-label">体験に含まれるもの</div>
+        <ul>
           <li>カウンセリング</li>
           <li>理学療法士による身体評価</li>
           <li><strong>整体施術</strong></li>
           <li>マシンピラティス体験</li>
         </ul>
-        <span class="trial-cta trial-cta--primary">このコースを予約する <em>→</em></span>
       </div>
+
+      <span class="trial-cta trial-cta--primary">このコースを予約する <em>→</em></span>
     </a>
   </div>
 
