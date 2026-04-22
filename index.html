@@ -1010,65 +1010,69 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 .trial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 26px;
+  gap: 30px;
   margin-bottom: 34px;
 }
 .trial-card {
   position: relative;
   background: #fff;
   border: 1px solid rgba(201,154,134,.3);
-  border-radius: 16px;
-  padding: 22px 20px 20px;
-  text-align: center;
+  border-radius: 18px;
+  padding: 22px 18px 18px;
   box-shadow: 0 8px 22px rgba(168,110,96,.1);
 }
 .trial-card--recommend {
   border: 2px solid var(--accent);
   background:
-    radial-gradient(circle at 100% 0%, rgba(234,207,190,.35), transparent 60%),
-    #fff9f3;
+    radial-gradient(circle at 100% 0%, rgba(234,207,190,.28), transparent 55%),
+    #fffaf4;
   box-shadow: 0 16px 36px rgba(168,110,96,.22);
-  margin-top: 8px;
+  margin-top: 10px;
 }
 .trial-badge {
-  display: inline-block;
   position: absolute;
-  top: -13px; left: 50%;
+  top: -14px; left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, var(--accent-deep) 0%, #8a5240 100%);
   color: #fff;
-  padding: 6px 18px;
-  border-radius: 20px;
+  padding: 7px 22px;
+  border-radius: 22px;
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: .08em;
-  box-shadow: 0 5px 14px rgba(168,110,96,.45);
+  letter-spacing: .1em;
+  box-shadow: 0 6px 14px rgba(168,110,96,.45);
   white-space: nowrap;
 }
 
+/* head */
+.trial-head {
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed rgba(201,154,134,.35);
+}
 .trial-tag {
   display: inline-block;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 11px;
-  letter-spacing: .35em;
+  letter-spacing: .38em;
   color: var(--accent-deep);
   margin-bottom: 8px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(201,154,134,.35);
+  padding: 0 10px;
+  line-height: 1;
 }
-
 .trial-card h4 {
   font-family: 'Noto Serif JP', serif;
   font-size: clamp(17px, 4.8vw, 19px);
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--main-dark);
-  margin: 0 0 4px;
+  margin: 0 0 6px;
   letter-spacing: .02em;
 }
 .trial-card h4 .hl {
-  background: linear-gradient(transparent 65%, rgba(212,138,146,.55) 65%);
+  background: linear-gradient(transparent 65%, rgba(212,138,146,.5) 65%);
   padding: 0 3px;
   color: var(--accent-deep);
 }
@@ -1076,82 +1080,136 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   font-size: 11px;
   letter-spacing: .04em;
   color: var(--text-soft);
-  margin-bottom: 14px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed rgba(201,154,134,.3);
 }
 
-.trial-price-block {
-  margin-bottom: 14px;
+/* price row ─ 通常 → 特別 横並び */
+.trial-price-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1.3fr;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 12px;
+  margin-bottom: 16px;
+  background:
+    linear-gradient(135deg, rgba(234,207,190,.2), rgba(255,248,242,.6)),
+    #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(201,154,134,.2);
 }
-.trial-price-old {
-  display: inline-block;
-  font-size: 12px;
-  color: var(--text-soft);
-  text-decoration: line-through;
+.trial-price-old-block {
+  text-align: center;
   opacity: .75;
+}
+.trial-price-old-label {
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: .15em;
+  color: var(--text-soft);
   margin-bottom: 2px;
 }
-.trial-price-new {
+.trial-price-old-num {
   font-family: 'Noto Serif JP', serif;
-  color: var(--accent-deep);
-  line-height: 1;
-  letter-spacing: -.01em;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 2px;
-}
-.trial-price-new .num {
-  font-size: clamp(42px, 12vw, 52px);
-  font-weight: 700;
-}
-.trial-price-new .yen {
   font-size: 17px;
+  font-weight: 500;
+  color: var(--text-soft);
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  letter-spacing: -.01em;
+  line-height: 1;
+  display: inline-block;
+}
+.trial-price-old-num small {
+  font-size: 11px;
+  margin-left: 1px;
+  text-decoration: line-through;
+}
+
+.trial-price-arrow {
+  font-size: 18px;
+  color: var(--accent-deep);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  animation: trialArrowPulse 1.8s ease-in-out infinite;
+}
+@keyframes trialArrowPulse {
+  0%, 100% { transform: translateX(0); opacity: .9; }
+  50% { transform: translateX(2px); opacity: 1; }
+}
+
+.trial-price-new-block {
+  text-align: center;
+  position: relative;
+}
+.trial-price-new-label {
+  display: inline-block;
+  background: linear-gradient(135deg, #e85a5a, #c94545);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  margin-bottom: 4px;
+  box-shadow: 0 3px 8px rgba(232,90,90,.3);
+}
+.trial-price-new-num {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(32px, 9vw, 40px);
+  font-weight: 700;
+  color: var(--accent-deep);
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+.trial-price-new-num small {
+  font-size: 15px;
   font-weight: 600;
   color: var(--main-dark);
+  margin-left: 1px;
   font-family: 'Noto Sans JP', sans-serif;
 }
-.trial-price-new small {
-  font-size: 10px;
-  opacity: .7;
-  margin-left: 2px;
+.trial-price-tax {
+  display: inline-block;
+  font-size: 9.5px;
   color: var(--text-soft);
-  font-weight: 400;
-  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: .08em;
+  margin-top: 4px;
+  padding: 1px 6px;
+  border: 1px solid rgba(201,154,134,.4);
+  border-radius: 3px;
 }
 
 .trial-list {
   list-style: none;
-  padding: 12px 14px;
+  padding: 14px 14px;
   background: var(--bg-light);
   border-radius: 10px;
-  text-align: left;
   margin-bottom: 14px;
-  border: 1px solid rgba(201,154,134,.15);
+  border: 1px solid rgba(201,154,134,.18);
 }
 .trial-list li {
-  padding: 4px 0 4px 22px;
+  padding: 5px 0 5px 26px;
   font-size: 13px;
   color: var(--text);
   line-height: 1.6;
   position: relative;
 }
-.trial-list li + li { border-top: 1px dotted rgba(201,154,134,.22); }
+.trial-list li + li { border-top: 1px dotted rgba(201,154,134,.25); }
 .trial-list li::before {
   content: '✓';
   position: absolute;
   left: 2px;
-  top: 5px;
-  width: 16px;
-  height: 16px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
   background: var(--accent-deep);
   color: #fff;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 10.5px;
   border-radius: 50%;
   text-align: center;
-  line-height: 16px;
+  line-height: 18px;
 }
 .trial-list li strong {
   color: var(--accent-deep);
@@ -1168,7 +1226,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   background: #fff;
   color: var(--main-dark);
   border: 1.5px solid var(--accent);
-  padding: 13px 14px;
+  padding: 14px 14px;
   border-radius: 12px;
   font-size: 14.5px;
   font-weight: 700;
@@ -1189,7 +1247,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   border-color: transparent;
   box-shadow: 0 10px 22px rgba(168,110,96,.4), inset 0 1px 0 rgba(255,255,255,.3);
   font-size: 15.5px;
-  padding: 15px 14px;
+  padding: 16px 14px;
   text-shadow: 0 1px 2px rgba(85,49,57,.35);
 }
 .trial-cta--primary .arr { color: #fff; }
@@ -2490,16 +2548,23 @@ body { padding-bottom: 76px; }
 
   <div class="trial-grid">
     <div class="trial-card">
-      <span class="trial-tag">OPTION A</span>
-      <h4>マシンピラティス体験</h4>
-      <p class="trial-duration">50分・完全予約制・マンツーマン</p>
+      <div class="trial-head">
+        <span class="trial-tag">OPTION A</span>
+        <h4>マシンピラティス<br>体験コース</h4>
+        <p class="trial-duration">50分 / 完全予約制 / マンツーマン</p>
+      </div>
 
-      <div class="trial-price-block">
-        <span class="trial-price-old">通常 10,000円</span>
-        <p class="trial-price-new">
-          <span class="num">1,100</span><span class="yen">円</span>
-          <small>（税込）</small>
-        </p>
+      <div class="trial-price-row">
+        <div class="trial-price-old-block">
+          <span class="trial-price-old-label">通常</span>
+          <span class="trial-price-old-num">10,000<small>円</small></span>
+        </div>
+        <div class="trial-price-arrow">→</div>
+        <div class="trial-price-new-block">
+          <span class="trial-price-new-label">特別価格</span>
+          <span class="trial-price-new-num">1,100<small>円</small></span>
+          <span class="trial-price-tax">税込</span>
+        </div>
       </div>
 
       <ul class="trial-list">
@@ -2515,16 +2580,23 @@ body { padding-bottom: 76px; }
 
     <div class="trial-card trial-card--recommend">
       <span class="trial-badge">★ 一番人気・おすすめ ★</span>
-      <span class="trial-tag">OPTION B</span>
-      <h4>整体 × <span class="hl">ピラティス</span>体験</h4>
-      <p class="trial-duration">50分・完全予約制・マンツーマン</p>
+      <div class="trial-head">
+        <span class="trial-tag">OPTION B</span>
+        <h4>整体 × <span class="hl">マシンピラティス</span><br>体験コース</h4>
+        <p class="trial-duration">50分 / 完全予約制 / マンツーマン</p>
+      </div>
 
-      <div class="trial-price-block">
-        <span class="trial-price-old">通常 10,000円</span>
-        <p class="trial-price-new">
-          <span class="num">1,100</span><span class="yen">円</span>
-          <small>（税込）</small>
-        </p>
+      <div class="trial-price-row">
+        <div class="trial-price-old-block">
+          <span class="trial-price-old-label">通常</span>
+          <span class="trial-price-old-num">10,000<small>円</small></span>
+        </div>
+        <div class="trial-price-arrow">→</div>
+        <div class="trial-price-new-block">
+          <span class="trial-price-new-label">特別価格</span>
+          <span class="trial-price-new-num">1,100<small>円</small></span>
+          <span class="trial-price-tax">税込</span>
+        </div>
       </div>
 
       <ul class="trial-list">
