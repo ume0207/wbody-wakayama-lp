@@ -1010,206 +1010,208 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 .trial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
-  margin-bottom: 34px;
+  gap: 22px;
+  margin-bottom: 30px;
 }
 .trial-card {
   position: relative;
+  display: block;
   background: #fff;
-  border: 1px solid rgba(201,154,134,.3);
   border-radius: 18px;
-  padding: 22px 18px 18px;
-  box-shadow: 0 8px 22px rgba(168,110,96,.1);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(85,49,57,.18);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s ease, box-shadow .3s ease;
+  border: 1px solid rgba(201,154,134,.2);
 }
+.trial-card:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(85,49,57,.28); }
 .trial-card--recommend {
   border: 2px solid var(--accent);
-  background:
-    radial-gradient(circle at 100% 0%, rgba(234,207,190,.28), transparent 55%),
-    #fffaf4;
-  box-shadow: 0 16px 36px rgba(168,110,96,.22);
+  box-shadow: 0 18px 42px rgba(168,110,96,.32);
   margin-top: 10px;
 }
 .trial-badge {
   position: absolute;
   top: -14px; left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--accent-deep) 0%, #8a5240 100%);
+  background: linear-gradient(135deg, #d28c54, var(--accent-deep) 55%, #8a5240);
   color: #fff;
   padding: 7px 22px;
   border-radius: 22px;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: .1em;
-  box-shadow: 0 6px 14px rgba(168,110,96,.45);
+  letter-spacing: .12em;
+  box-shadow: 0 6px 16px rgba(168,110,96,.5), inset 0 1px 0 rgba(255,255,255,.25);
   white-space: nowrap;
+  z-index: 3;
 }
 
-/* head */
-.trial-head {
-  text-align: center;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-  border-bottom: 1px dashed rgba(201,154,134,.35);
+/* HERO image header */
+.trial-hero {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  background-size: cover;
+  background-position: center 30%;
+}
+.trial-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(85,49,57,.2) 0%, rgba(58,31,39,.5) 60%, rgba(40,20,26,.9) 100%),
+    linear-gradient(90deg, rgba(40,20,26,.35), rgba(85,49,57,.1));
+}
+.trial-hero-overlay {
+  position: absolute; inset: 0;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  z-index: 1;
 }
 .trial-tag {
   display: inline-block;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 11px;
-  letter-spacing: .38em;
-  color: var(--accent-deep);
-  margin-bottom: 8px;
-  padding: 0 10px;
-  line-height: 1;
+  letter-spacing: .35em;
+  color: var(--accent-light);
+  padding-bottom: 4px;
+  align-self: flex-start;
+  border-bottom: 1px solid rgba(234,207,190,.5);
+  margin-bottom: 6px;
 }
 .trial-card h4 {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(17px, 4.8vw, 19px);
+  font-size: clamp(19px, 5.4vw, 22px);
   font-weight: 700;
-  line-height: 1.45;
-  color: var(--main-dark);
-  margin: 0 0 6px;
-  letter-spacing: .02em;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0;
+  letter-spacing: .03em;
+  text-shadow: 0 2px 10px rgba(0,0,0,.45);
 }
 .trial-card h4 .hl {
-  background: linear-gradient(transparent 65%, rgba(212,138,146,.5) 65%);
-  padding: 0 3px;
-  color: var(--accent-deep);
+  background: linear-gradient(transparent 60%, rgba(201,154,134,.75) 60%);
+  padding: 0 4px;
+  color: #fff;
 }
-.trial-duration {
-  font-size: 11px;
-  letter-spacing: .04em;
-  color: var(--text-soft);
+.trial-hero-meta {
+  font-size: 11.5px;
+  margin-top: 6px;
+  letter-spacing: .12em;
+  color: var(--accent-light);
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0,0,0,.5);
 }
 
-/* price row ─ 通常 → 特別 横並び */
-.trial-price-row {
-  display: grid;
-  grid-template-columns: 1fr auto 1.3fr;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 12px;
-  margin-bottom: 16px;
+/* BODY */
+.trial-body {
+  padding: 16px 16px 18px;
+  background: #fff;
+}
+.trial-card--recommend .trial-body {
   background:
-    linear-gradient(135deg, rgba(234,207,190,.2), rgba(255,248,242,.6)),
-    #fff;
-  border-radius: 12px;
-  border: 1px solid rgba(201,154,134,.2);
+    radial-gradient(circle at 100% 100%, rgba(234,207,190,.35), transparent 55%),
+    #fff9f2;
 }
-.trial-price-old-block {
-  text-align: center;
-  opacity: .75;
+
+/* PRICE ROW - compact horizontal */
+.trial-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 10px;
+  background: linear-gradient(135deg, #fef8f1, #fff);
+  border: 1px solid rgba(201,154,134,.25);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  flex-wrap: nowrap;
 }
-.trial-price-old-label {
-  display: block;
-  font-size: 9.5px;
-  letter-spacing: .15em;
+.trial-price-old {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
   color: var(--text-soft);
-  margin-bottom: 2px;
+  text-decoration: line-through;
+  opacity: .6;
+  letter-spacing: -.01em;
+  flex-shrink: 0;
 }
-.trial-price-old-num {
+.trial-price-arrow {
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.trial-price-new {
   font-family: 'Noto Serif JP', serif;
-  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent-deep);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.trial-price-new em {
+  font-style: normal;
+  font-size: clamp(30px, 8.5vw, 38px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--accent-deep);
+  background: linear-gradient(135deg, #b66a50, #a86e60);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 1px;
+}
+.trial-price-new small {
+  font-size: 10px;
   font-weight: 500;
   color: var(--text-soft);
-  text-decoration: line-through;
-  text-decoration-thickness: 1.5px;
-  letter-spacing: -.01em;
-  line-height: 1;
-  display: inline-block;
-}
-.trial-price-old-num small {
-  font-size: 11px;
-  margin-left: 1px;
-  text-decoration: line-through;
-}
-
-.trial-price-arrow {
-  font-size: 18px;
-  color: var(--accent-deep);
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  animation: trialArrowPulse 1.8s ease-in-out infinite;
-}
-@keyframes trialArrowPulse {
-  0%, 100% { transform: translateX(0); opacity: .9; }
-  50% { transform: translateX(2px); opacity: 1; }
-}
-
-.trial-price-new-block {
-  text-align: center;
-  position: relative;
-}
-.trial-price-new-label {
-  display: inline-block;
-  background: linear-gradient(135deg, #e85a5a, #c94545);
-  color: #fff;
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  margin-bottom: 4px;
-  box-shadow: 0 3px 8px rgba(232,90,90,.3);
-}
-.trial-price-new-num {
-  display: block;
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(32px, 9vw, 40px);
-  font-weight: 700;
-  color: var(--accent-deep);
-  letter-spacing: -.02em;
-  line-height: 1;
-}
-.trial-price-new-num small {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--main-dark);
-  margin-left: 1px;
-  font-family: 'Noto Sans JP', sans-serif;
-}
-.trial-price-tax {
-  display: inline-block;
-  font-size: 9.5px;
-  color: var(--text-soft);
-  letter-spacing: .08em;
-  margin-top: 4px;
-  padding: 1px 6px;
+  margin-left: 4px;
+  padding: 2px 6px;
   border: 1px solid rgba(201,154,134,.4);
   border-radius: 3px;
+  letter-spacing: .06em;
+  font-family: 'Noto Sans JP', sans-serif;
+  align-self: center;
 }
 
+/* LIST */
 .trial-list {
   list-style: none;
-  padding: 14px 14px;
+  padding: 10px 12px;
   background: var(--bg-light);
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 14px;
-  border: 1px solid rgba(201,154,134,.18);
 }
 .trial-list li {
-  padding: 5px 0 5px 26px;
+  padding: 4px 0 4px 22px;
   font-size: 13px;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.55;
   position: relative;
 }
 .trial-list li + li { border-top: 1px dotted rgba(201,154,134,.25); }
 .trial-list li::before {
   content: '✓';
   position: absolute;
-  left: 2px;
-  top: 7px;
-  width: 18px;
-  height: 18px;
+  left: 0;
+  top: 5px;
+  width: 16px;
+  height: 16px;
   background: var(--accent-deep);
   color: #fff;
   font-weight: 700;
-  font-size: 10.5px;
+  font-size: 10px;
   border-radius: 50%;
   text-align: center;
-  line-height: 18px;
+  line-height: 16px;
 }
 .trial-list li strong {
   color: var(--accent-deep);
@@ -1218,6 +1220,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   padding: 0 2px;
 }
 
+/* CTA */
 .trial-cta {
   display: flex;
   align-items: center;
@@ -1226,31 +1229,35 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   background: #fff;
   color: var(--main-dark);
   border: 1.5px solid var(--accent);
-  padding: 14px 14px;
-  border-radius: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
   font-size: 14.5px;
   font-weight: 700;
-  text-decoration: none;
   letter-spacing: .03em;
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: all .25s ease;
 }
-.trial-cta .arr {
+.trial-cta em {
+  font-style: normal;
   font-size: 17px;
   color: var(--accent-deep);
   transition: transform .25s ease;
 }
-.trial-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(168,110,96,.22); }
-.trial-cta:hover .arr { transform: translateX(4px); }
+.trial-card:hover .trial-cta em { transform: translateX(4px); }
 .trial-cta--primary {
   background: linear-gradient(180deg, #eacfbe, #c99a86 55%, #a86e60);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 10px 22px rgba(168,110,96,.4), inset 0 1px 0 rgba(255,255,255,.3);
+  box-shadow: 0 10px 22px rgba(168,110,96,.42), inset 0 1px 0 rgba(255,255,255,.3);
   font-size: 15.5px;
-  padding: 16px 14px;
+  padding: 14px 14px;
   text-shadow: 0 1px 2px rgba(85,49,57,.35);
+  animation: trialCtaPulse 2.4s ease-in-out infinite;
 }
-.trial-cta--primary .arr { color: #fff; }
+.trial-cta--primary em { color: #fff; }
+@keyframes trialCtaPulse {
+  0%, 100% { box-shadow: 0 10px 22px rgba(168,110,96,.42), inset 0 1px 0 rgba(255,255,255,.3); }
+  50% { box-shadow: 0 10px 22px rgba(168,110,96,.42), inset 0 1px 0 rgba(255,255,255,.3), 0 0 0 6px rgba(212,138,146,.18); }
+}
 
 /* ─── サブスク料金表 ─── */
 .sub-head { text-align: center; margin: 8px 0 16px; }
@@ -2547,69 +2554,53 @@ body { padding-bottom: 76px; }
   </div>
 
   <div class="trial-grid">
-    <div class="trial-card">
-      <div class="trial-head">
-        <span class="trial-tag">OPTION A</span>
-        <h4>マシンピラティス<br>体験コース</h4>
-        <p class="trial-duration">50分 / 完全予約制 / マンツーマン</p>
-      </div>
-
-      <div class="trial-price-row">
-        <div class="trial-price-old-block">
-          <span class="trial-price-old-label">通常</span>
-          <span class="trial-price-old-num">10,000<small>円</small></span>
-        </div>
-        <div class="trial-price-arrow">→</div>
-        <div class="trial-price-new-block">
-          <span class="trial-price-new-label">特別価格</span>
-          <span class="trial-price-new-num">1,100<small>円</small></span>
-          <span class="trial-price-tax">税込</span>
+    <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="trial-card">
+      <div class="trial-hero" style="background-image: url('images/pilates_03.jpg');">
+        <div class="trial-hero-overlay">
+          <span class="trial-tag">OPTION A</span>
+          <h4>マシンピラティス<br>体験コース</h4>
+          <div class="trial-hero-meta">50分・マンツーマン</div>
         </div>
       </div>
+      <div class="trial-body">
+        <div class="trial-price-row">
+          <span class="trial-price-old">10,000円</span>
+          <span class="trial-price-arrow">→</span>
+          <span class="trial-price-new"><em>1,100</em>円<small>税込</small></span>
+        </div>
+        <ul class="trial-list">
+          <li>カウンセリング</li>
+          <li>理学療法士による身体評価</li>
+          <li>マシンピラティス体験</li>
+        </ul>
+        <span class="trial-cta">このコースを予約する <em>→</em></span>
+      </div>
+    </a>
 
-      <ul class="trial-list">
-        <li>カウンセリング</li>
-        <li>理学療法士による身体評価</li>
-        <li>マシンピラティス体験</li>
-      </ul>
-
-      <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="trial-cta">
-        このコースで予約する <span class="arr">→</span>
-      </a>
-    </div>
-
-    <div class="trial-card trial-card--recommend">
+    <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="trial-card trial-card--recommend">
       <span class="trial-badge">★ 一番人気・おすすめ ★</span>
-      <div class="trial-head">
-        <span class="trial-tag">OPTION B</span>
-        <h4>整体 × <span class="hl">マシンピラティス</span><br>体験コース</h4>
-        <p class="trial-duration">50分 / 完全予約制 / マンツーマン</p>
-      </div>
-
-      <div class="trial-price-row">
-        <div class="trial-price-old-block">
-          <span class="trial-price-old-label">通常</span>
-          <span class="trial-price-old-num">10,000<small>円</small></span>
-        </div>
-        <div class="trial-price-arrow">→</div>
-        <div class="trial-price-new-block">
-          <span class="trial-price-new-label">特別価格</span>
-          <span class="trial-price-new-num">1,100<small>円</small></span>
-          <span class="trial-price-tax">税込</span>
+      <div class="trial-hero" style="background-image: url('images/pilates_06.jpg');">
+        <div class="trial-hero-overlay">
+          <span class="trial-tag">OPTION B</span>
+          <h4>整体 × <span class="hl">ピラティス</span><br>体験コース</h4>
+          <div class="trial-hero-meta">50分・マンツーマン</div>
         </div>
       </div>
-
-      <ul class="trial-list">
-        <li>カウンセリング</li>
-        <li>理学療法士による身体評価</li>
-        <li><strong>整体施術</strong></li>
-        <li>マシンピラティス体験</li>
-      </ul>
-
-      <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="trial-cta trial-cta--primary">
-        このコースで予約する <span class="arr">→</span>
-      </a>
-    </div>
+      <div class="trial-body">
+        <div class="trial-price-row">
+          <span class="trial-price-old">10,000円</span>
+          <span class="trial-price-arrow">→</span>
+          <span class="trial-price-new"><em>1,100</em>円<small>税込</small></span>
+        </div>
+        <ul class="trial-list">
+          <li>カウンセリング</li>
+          <li>理学療法士による身体評価</li>
+          <li><strong>整体施術</strong></li>
+          <li>マシンピラティス体験</li>
+        </ul>
+        <span class="trial-cta trial-cta--primary">このコースを予約する <em>→</em></span>
+      </div>
+    </a>
   </div>
 
   <!-- サブスク料金表 -->
