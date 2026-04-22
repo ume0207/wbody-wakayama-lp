@@ -1375,17 +1375,29 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 }
 .twostep-result p {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(16px, 4.4vw, 18px);
   font-weight: 600;
   line-height: 1.65;
   position: relative;
 }
-.twostep-result strong {
+.twostep-result-lead {
+  font-size: clamp(14px, 3.8vw, 16px);
+  letter-spacing: .02em;
+  opacity: .95;
+  margin-bottom: 4px;
+}
+.twostep-result-big {
+  font-size: clamp(24px, 6.8vw, 30px);
+  font-weight: 700;
+  letter-spacing: .05em;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+.twostep-result-big strong {
   color: var(--accent-light);
   font-weight: 700;
   font-size: 1.15em;
-  background: linear-gradient(transparent 65%, rgba(201,162,75,.35) 65%);
-  padding: 0 3px;
+  background: linear-gradient(transparent 65%, rgba(201,162,75,.45) 65%);
+  padding: 0 4px;
 }
 
 /* ─── インフルエンサー絶賛 ─── */
@@ -1638,7 +1650,8 @@ body { padding-bottom: 76px; }
 
   <div class="twostep-result">
     <span class="twostep-result-eyebrow">RESULT</span>
-    <p>整体 × ピラティスの<br>「いいとこ取り」で、<strong>戻らない体</strong>へ。</p>
+    <p class="twostep-result-lead">整体 × ピラティスの「いいとこ取り」で、</p>
+    <p class="twostep-result-big"><strong>戻らない体</strong>へ。</p>
   </div>
 </div>
 
