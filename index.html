@@ -1177,6 +1177,198 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   letter-spacing: .03em;
 }
 
+/* ─── 2ステップセクション ─── */
+.twostep-section {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(234,207,190,.35), transparent 55%),
+    radial-gradient(circle at 90% 100%, rgba(212,138,146,.15), transparent 55%),
+    #fbf5ef;
+  padding: 2.2rem 1.4rem 1.8rem;
+}
+.twostep-head { text-align: center; margin-bottom: 22px; }
+.twostep-eyebrow {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 12.5px;
+  letter-spacing: .4em;
+  color: var(--accent-deep);
+  margin-bottom: 10px;
+}
+.twostep-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(21px, 5.8vw, 26px);
+  font-weight: 700;
+  color: var(--main-dark);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  letter-spacing: .03em;
+}
+.twostep-title .hl-line {
+  background: linear-gradient(transparent 62%, rgba(212,138,146,.5) 62%);
+  padding: 0 4px;
+  color: var(--accent-deep);
+}
+.twostep-lead {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--text-soft);
+  letter-spacing: .01em;
+}
+
+.twostep-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(85,49,57,.14);
+  border: 1px solid rgba(201,154,134,.18);
+  position: relative;
+}
+.twostep-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--main-dark);
+}
+.twostep-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.78) saturate(0.95);
+}
+.twostep-img-wrap::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(85,49,57,0.25) 0%, rgba(85,49,57,0.1) 40%, rgba(40,20,26,0.8) 100%);
+}
+.twostep-num {
+  position: absolute;
+  top: 12px; right: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--accent-light);
+  line-height: 1;
+  text-shadow: 0 4px 14px rgba(0,0,0,.6);
+  letter-spacing: -0.02em;
+}
+.twostep-label {
+  position: absolute;
+  bottom: 14px; left: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: .32em;
+  color: #fff;
+  font-weight: 500;
+  background: rgba(201,154,134,.85);
+  padding: 4px 12px;
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+}
+.twostep-body {
+  padding: 18px 20px 20px;
+}
+.twostep-body h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(17px, 4.8vw, 20px);
+  font-weight: 700;
+  color: var(--main-dark);
+  line-height: 1.45;
+  margin-bottom: 10px;
+  letter-spacing: .02em;
+}
+.twostep-body h3 .hl {
+  background: linear-gradient(transparent 65%, rgba(212,138,146,.55) 65%);
+  padding: 0 3px;
+  color: var(--accent-deep);
+}
+.twostep-body p {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}
+.twostep-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--main);
+  background: var(--bg-light);
+  border-left: 3px solid var(--accent-deep);
+  padding: 6px 12px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+
+.twostep-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 0 8px;
+}
+.twostep-arrow span {
+  font-size: 11.5px;
+  color: var(--accent-deep);
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+.twostep-arrow-icon {
+  color: var(--accent);
+  font-size: 18px;
+  line-height: 1;
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.twostep-card--2 { margin-bottom: 18px; }
+
+.twostep-result {
+  background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+  color: #fff;
+  padding: 18px 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(85,49,57,.3);
+  position: relative;
+  overflow: hidden;
+}
+.twostep-result::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(234,207,190,.28), transparent 70%);
+  border-radius: 50%;
+}
+.twostep-result-eyebrow {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 10.5px;
+  letter-spacing: .45em;
+  color: var(--accent-light);
+  margin-bottom: 6px;
+  position: relative;
+}
+.twostep-result p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(16px, 4.4vw, 18px);
+  font-weight: 600;
+  line-height: 1.65;
+  position: relative;
+}
+.twostep-result strong {
+  color: var(--accent-light);
+  font-weight: 700;
+  font-size: 1.15em;
+  background: linear-gradient(transparent 65%, rgba(201,162,75,.35) 65%);
+  padding: 0 3px;
+}
+
 /* ─── インフルエンサー絶賛 ─── */
 .influencer-section {
   background:
@@ -1349,7 +1541,7 @@ body { padding-bottom: 76px; }
     <h1 class="hero-catch">
       <span class="accent-line">整体×マシンピラティス</span>で<br>理学療法士が<br>あなたの体を根本から変える。
     </h1>
-    <p class="hero-sub">まず整体で骨格を整え、<br>次にピラティスで深層筋を鍛える。<br>この順番だから、効果が続く。</p>
+    <p class="hero-sub">整体で整える → ピラティスで鍛える。<br>この順番だから、効果が続く。</p>
     <div class="cta-container" style="width: 100%; padding: 12px 10px 0;">
       <a href="https://yui.kanzashi.com/l/3W7fd857A2o/kirei" target="_blank" rel="noopener" class="btn-main">
         体験 1,100円（50分）を予約する
@@ -1376,6 +1568,51 @@ body { padding-bottom: 76px; }
 <!-- 信頼バー -->
 <div class="trust-bar">
   <span class="nowrap">国家資格 <strong>理学療法士</strong></span><span class="divider">|</span><span class="nowrap">整体 × <strong>マシンピラティス</strong></span><span class="divider">|</span><span class="nowrap">女性のための<strong>引き締め</strong></span>
+</div>
+
+<!-- 2ステップ紹介 -->
+<div class="twostep-section reveal">
+  <div class="twostep-head">
+    <span class="twostep-eyebrow">— OUR METHOD —</span>
+    <h2 class="twostep-title">整えて、鍛える。<br>だから<span class="hl-line">効果が続く</span>。</h2>
+    <p class="twostep-lead">一般的なピラティスだけでは、歪んだ骨格のまま動かしてしまい<br>効果を実感できずに終わってしまうこともあります。<br>W Body 和歌山では、まず整体で土台を整えてから鍛えます。</p>
+  </div>
+
+  <div class="twostep-card">
+    <div class="twostep-img-wrap">
+      <img src="images/chiro_01.jpg" alt="整体で骨格を整える">
+      <div class="twostep-num">01</div>
+      <span class="twostep-label">STEP 1・CHIROPRACTIC</span>
+    </div>
+    <div class="twostep-body">
+      <h3>まず<span class="hl">整体</span>で<br>骨格・骨盤を整える</h3>
+      <p>姿勢・骨盤・関節の歪みを国家資格の理学療法士が手技で丁寧にリセット。痛みを取り、体が正しく動ける「土台」をつくります。</p>
+      <div class="twostep-tag">✓ 痛みが取れる　✓ 動きやすくなる</div>
+    </div>
+  </div>
+
+  <div class="twostep-arrow">
+    <span>この順番があるから効果が変わる</span>
+    <div class="twostep-arrow-icon">▼</div>
+  </div>
+
+  <div class="twostep-card twostep-card--2">
+    <div class="twostep-img-wrap">
+      <img src="images/pilates_07.jpg" alt="ピラティスで深層筋を鍛える" style="object-position: center 30%;">
+      <div class="twostep-num">02</div>
+      <span class="twostep-label">STEP 2・PILATES</span>
+    </div>
+    <div class="twostep-body">
+      <h3>次に<span class="hl">ピラティス</span>で<br>深層筋を鍛える</h3>
+      <p>整えた体にリフォーマーで正確に負荷を。インナーマッスルが育つから、姿勢が保たれ、見た目も引き締まり、再発しない体に。</p>
+      <div class="twostep-tag">✓ 姿勢が変わる　✓ 引き締まる</div>
+    </div>
+  </div>
+
+  <div class="twostep-result">
+    <span class="twostep-result-eyebrow">RESULT</span>
+    <p>整体 × ピラティスの「いいとこ取り」で<br><strong>戻らない体</strong>へ。</p>
+  </div>
 </div>
 
 <!-- CTA 0（お客様の声の上） -->
