@@ -1010,77 +1010,74 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 .trial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: 20px;
+  margin-bottom: 28px;
 }
 .trial-card {
   position: relative;
   display: block;
   background:
-    radial-gradient(circle at 100% 0%, rgba(234,207,190,.25), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(234,207,190,.22), transparent 55%),
     #fff;
   border: 1px solid rgba(201,154,134,.3);
-  border-radius: 16px;
-  padding: 26px 22px 22px;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 10px 26px rgba(85,49,57,.12);
+  box-shadow: 0 8px 22px rgba(85,49,57,.11);
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.trial-card:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(85,49,57,.2); }
+.trial-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(85,49,57,.18); }
 .trial-card--recommend {
   border: 2px solid var(--accent);
   background:
-    radial-gradient(circle at 100% 0%, rgba(234,207,190,.45), transparent 55%),
-    radial-gradient(circle at 0% 100%, rgba(212,138,146,.12), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(234,207,190,.4), transparent 55%),
     #fff8f0;
-  box-shadow: 0 18px 40px rgba(168,110,96,.28);
-  margin-top: 12px;
+  box-shadow: 0 14px 32px rgba(168,110,96,.26);
+  margin-top: 10px;
 }
 .trial-badge {
   position: absolute;
-  top: -14px; left: 50%;
+  top: -13px; left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, #d28c54, var(--accent-deep) 55%, #8a5240);
   color: #fff;
-  padding: 7px 22px;
-  border-radius: 22px;
-  font-size: 12px;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: .1em;
-  box-shadow: 0 6px 16px rgba(168,110,96,.5), inset 0 1px 0 rgba(255,255,255,.3);
+  box-shadow: 0 5px 14px rgba(168,110,96,.48), inset 0 1px 0 rgba(255,255,255,.3);
   white-space: nowrap;
   z-index: 3;
 }
 
-/* TOP: tag + sub tagline */
+/* TOP: tag + sub tagline - tight */
 .trial-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(201,154,134,.25);
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,154,134,.22);
 }
 .trial-tag {
   display: inline-flex;
   align-items: center;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 13px;
-  letter-spacing: .34em;
+  font-size: 12.5px;
+  letter-spacing: .3em;
   color: var(--accent-deep);
-  padding: 4px 10px 4px 0;
-  position: relative;
   line-height: 1;
   flex-shrink: 0;
 }
 .trial-tag::before {
   content: '';
-  width: 18px; height: 1px;
+  width: 16px; height: 1px;
   background: var(--accent-deep);
-  margin-right: 10px;
+  margin-right: 8px;
 }
 .trial-sub {
   font-size: 11.5px;
@@ -1088,16 +1085,18 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   letter-spacing: .04em;
   text-align: right;
   line-height: 1.4;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
-/* TITLE */
+/* TITLE + DURATION - tight grouping */
 .trial-title {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(22px, 6.4vw, 26px);
+  font-size: clamp(20px, 5.8vw, 24px);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--main-dark);
-  margin: 0 0 14px;
+  margin: 0 0 6px;
   letter-spacing: .02em;
   text-align: center;
 }
@@ -1106,24 +1105,27 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   padding: 0 4px;
   color: var(--accent-deep);
 }
-
-/* DURATION - BIGGER */
 .trial-duration {
   text-align: center;
-  margin-bottom: 22px;
+  margin: 0 0 14px;
   font-family: 'Noto Serif JP', serif;
-  color: var(--main);
+  color: var(--main-dark);
   font-weight: 600;
   letter-spacing: .02em;
-  font-size: 18px;
+  font-size: 15px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0;
 }
 .trial-duration span {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--accent-deep);
   letter-spacing: -.02em;
-  margin-right: 2px;
+  line-height: 1;
   font-family: 'Noto Serif JP', serif;
+  margin-right: 1px;
 }
 .trial-duration small {
   font-size: 13px;
@@ -1131,47 +1133,52 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   color: var(--text-soft);
   margin-left: 4px;
   font-family: 'Noto Sans JP', sans-serif;
-  letter-spacing: .04em;
+  letter-spacing: .02em;
 }
 
-/* PRICE - large & prominent, no nested box */
+/* PRICE - compact, no nested box */
 .trial-price {
   text-align: center;
-  padding: 18px 0 20px;
-  margin-bottom: 18px;
+  padding: 12px 0 14px;
+  margin-bottom: 14px;
   border-top: 1px dashed rgba(201,154,134,.4);
   border-bottom: 1px dashed rgba(201,154,134,.4);
-  position: relative;
 }
 .trial-price-old {
-  display: block;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 18px;
   color: var(--text-soft);
-  margin-bottom: 10px;
-  letter-spacing: -.01em;
+  margin-bottom: 8px;
   font-weight: 500;
+  opacity: .8;
 }
 .trial-price-old em {
   font-style: normal;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
+  text-decoration-color: rgba(106,84,88,.7);
   color: var(--text-soft);
+  letter-spacing: -.01em;
+  font-family: 'Noto Serif JP', serif;
 }
+
+/* Row: arrow + badge inline */
 .trial-price-arrow {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 18px;
-  color: var(--accent-deep);
-  font-weight: 700;
-  margin-bottom: 8px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--accent-deep);
+  font-weight: 700;
+  font-size: 16px;
   line-height: 1;
-  animation: trialPriceArrow 1.8s ease-in-out infinite;
 }
 .trial-price-arrow small {
   display: inline-block;
@@ -1185,10 +1192,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   box-shadow: 0 3px 10px rgba(232,90,90,.35);
   font-family: 'Noto Sans JP', sans-serif;
 }
-@keyframes trialPriceArrow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(3px); }
-}
+
 .trial-price-new {
   display: inline-flex;
   align-items: baseline;
@@ -1200,7 +1204,7 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
 }
 .trial-price-new em {
   font-style: normal;
-  font-size: clamp(56px, 16vw, 72px);
+  font-size: clamp(50px, 14.5vw, 66px);
   font-weight: 800;
   background: linear-gradient(135deg, #b66a50, var(--accent-deep) 60%, #8a5240);
   -webkit-background-clip: text;
@@ -1208,14 +1212,15 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   -webkit-text-fill-color: transparent;
   padding-right: 2px;
 }
-.trial-price-new span {
+.trial-price-new > span {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--main-dark);
   letter-spacing: 0;
+  margin-left: 2px;
 }
-.trial-price-new span small {
+.trial-price-new > span small {
   font-size: 12px;
   font-weight: 400;
   color: var(--text-soft);
@@ -1223,20 +1228,19 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   letter-spacing: .04em;
 }
 
-/* INCLUDES - no nested card, flat with label */
+/* INCLUDES - flat with label */
 .trial-includes {
-  margin-bottom: 18px;
-  padding: 0 4px;
+  margin-bottom: 14px;
 }
 .trial-includes-label {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 11.5px;
   letter-spacing: .12em;
   color: var(--accent-deep);
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .trial-includes-label::before,
 .trial-includes-label::after {
@@ -1250,26 +1254,26 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   padding: 0;
 }
 .trial-includes li {
-  padding: 5px 0 5px 26px;
-  font-size: 14px;
+  padding: 3px 0 3px 24px;
+  font-size: 13.5px;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.55;
   position: relative;
 }
 .trial-includes li::before {
   content: '✓';
   position: absolute;
   left: 2px;
-  top: 7px;
-  width: 18px;
-  height: 18px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
   background: var(--accent-deep);
   color: #fff;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 10px;
   border-radius: 50%;
   text-align: center;
-  line-height: 18px;
+  line-height: 16px;
 }
 .trial-includes li strong {
   color: var(--accent-deep);
@@ -1287,16 +1291,16 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   background: #fff;
   color: var(--main-dark);
   border: 1.5px solid var(--accent);
-  padding: 14px 16px;
-  border-radius: 12px;
-  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14.5px;
   font-weight: 700;
-  letter-spacing: .04em;
+  letter-spacing: .03em;
   transition: all .25s ease;
 }
 .trial-cta em {
   font-style: normal;
-  font-size: 20px;
+  font-size: 19px;
   color: var(--accent-deep);
   transition: transform .25s ease;
 }
@@ -1305,16 +1309,16 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   background: linear-gradient(180deg, #eacfbe, #c99a86 55%, #a86e60);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 12px 26px rgba(168,110,96,.45), inset 0 1px 0 rgba(255,255,255,.3);
-  font-size: 16.5px;
-  padding: 16px 16px;
+  box-shadow: 0 10px 22px rgba(168,110,96,.4), inset 0 1px 0 rgba(255,255,255,.3);
+  font-size: 15.5px;
+  padding: 14px 14px;
   text-shadow: 0 1px 2px rgba(85,49,57,.35);
   animation: trialCtaPulse 2.4s ease-in-out infinite;
 }
 .trial-cta--primary em { color: #fff; }
 @keyframes trialCtaPulse {
-  0%, 100% { box-shadow: 0 12px 26px rgba(168,110,96,.45), inset 0 1px 0 rgba(255,255,255,.3); }
-  50% { box-shadow: 0 12px 26px rgba(168,110,96,.45), inset 0 1px 0 rgba(255,255,255,.3), 0 0 0 8px rgba(212,138,146,.18); }
+  0%, 100% { box-shadow: 0 10px 22px rgba(168,110,96,.4), inset 0 1px 0 rgba(255,255,255,.3); }
+  50% { box-shadow: 0 10px 22px rgba(168,110,96,.4), inset 0 1px 0 rgba(255,255,255,.3), 0 0 0 6px rgba(212,138,146,.18); }
 }
 
 /* ─── サブスク料金表 ─── */
@@ -2621,7 +2625,7 @@ body { padding-bottom: 76px; }
       <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
 
       <div class="trial-price">
-        <span class="trial-price-old">通常 <em>10,000</em>円</span>
+        <span class="trial-price-old">通常 <em>10,000円</em></span>
         <div class="trial-price-arrow">↓<small>特別価格</small></div>
         <div class="trial-price-new"><em>1,100</em><span>円<small>（税込）</small></span></div>
       </div>
@@ -2648,7 +2652,7 @@ body { padding-bottom: 76px; }
       <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
 
       <div class="trial-price">
-        <span class="trial-price-old">通常 <em>10,000</em>円</span>
+        <span class="trial-price-old">通常 <em>10,000円</em></span>
         <div class="trial-price-arrow">↓<small>特別価格</small></div>
         <div class="trial-price-new"><em>1,100</em><span>円<small>（税込）</small></span></div>
       </div>
