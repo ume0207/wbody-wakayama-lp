@@ -1133,90 +1133,87 @@ a.btn-main, a.btn-sub, a.btn-outline, .sticky-cta a, .faq-q {
   letter-spacing: .02em;
 }
 
-/* PRICE - compact row, tight spacing */
+/* PRICE - stacked rows, cleanly centered */
 .trial-price {
   text-align: center;
-  padding: 10px 0 10px;
-  margin: 0 -4px 12px;
-  background: linear-gradient(180deg, rgba(234,207,190,.12), rgba(234,207,190,.22));
+  padding: 12px 8px;
+  margin: 0 0 12px;
+  background: linear-gradient(180deg, #fef5eb, #fef0e2);
   border-radius: 10px;
 }
-.trial-price-old {
-  display: block;
+.trial-price-old-line {
   font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
   color: var(--text-soft);
   font-weight: 500;
-  font-size: 13px;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  opacity: .85;
 }
-.trial-price-old em {
+.trial-price-old-line em {
   font-style: normal;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
-  text-decoration-color: rgba(106,84,88,.7);
+  text-decoration-color: rgba(106,84,88,.65);
   color: var(--text-soft);
   letter-spacing: -.01em;
   font-family: 'Noto Serif JP', serif;
-  margin-left: 2px;
+  margin-left: 3px;
 }
-.trial-price-arrow {
-  display: inline-flex;
-  align-items: center;
+.trial-price-new-line {
+  display: flex;
+  align-items: baseline;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 2px;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: var(--accent-deep);
-  font-weight: 700;
-  font-size: 13px;
+  gap: 6px;
+  font-family: 'Noto Serif JP', serif;
   line-height: 1;
 }
-.trial-price-arrow small {
+.trial-price-label {
   display: inline-block;
   background: linear-gradient(135deg, #e85a5a, #c94545);
   color: #fff;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 3px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: .1em;
-  box-shadow: 0 2px 8px rgba(232,90,90,.3);
+  letter-spacing: .08em;
+  box-shadow: 0 3px 8px rgba(232,90,90,.3);
   font-family: 'Noto Sans JP', sans-serif;
-}
-.trial-price-new {
-  display: inline-flex;
-  align-items: baseline;
-  justify-content: center;
-  color: var(--accent-deep);
-  font-family: 'Noto Serif JP', serif;
+  align-self: center;
+  flex-shrink: 0;
   line-height: 1;
-  letter-spacing: -.02em;
 }
-.trial-price-new em {
+.trial-price-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-dark);
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0;
+  line-height: 1;
+}
+.trial-price-num em {
   font-style: normal;
-  font-size: clamp(46px, 13vw, 60px);
+  font-size: clamp(46px, 13.5vw, 60px);
   font-weight: 800;
   background: linear-gradient(135deg, #b66a50, var(--accent-deep) 60%, #8a5240);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  letter-spacing: -.02em;
+  font-family: 'Noto Serif JP', serif;
+  padding-right: 2px;
 }
-.trial-price-new > span {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--main-dark);
-  margin-left: 2px;
-}
-.trial-price-new > span small {
+.trial-price-tax {
   font-size: 11px;
   font-weight: 400;
   color: var(--text-soft);
-  margin-left: 1px;
-  letter-spacing: .04em;
+  letter-spacing: .02em;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1;
+  align-self: flex-end;
+  padding-bottom: 3px;
 }
 
 /* INCLUDES - tight inline */
@@ -2619,9 +2616,12 @@ body { padding-bottom: 76px; }
       <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
 
       <div class="trial-price">
-        <span class="trial-price-old">通常 <em>10,000円</em></span>
-        <div class="trial-price-arrow">↓<small>特別価格</small></div>
-        <div class="trial-price-new"><em>1,100</em><span>円<small>（税込）</small></span></div>
+        <div class="trial-price-old-line">通常 <em>10,000円</em></div>
+        <div class="trial-price-new-line">
+          <span class="trial-price-label">特別価格</span>
+          <span class="trial-price-num"><em>1,100</em>円</span>
+          <span class="trial-price-tax">（税込）</span>
+        </div>
       </div>
 
       <div class="trial-includes">
@@ -2646,9 +2646,12 @@ body { padding-bottom: 76px; }
       <p class="trial-duration"><span>50</span>分<small>・完全マンツーマン</small></p>
 
       <div class="trial-price">
-        <span class="trial-price-old">通常 <em>10,000円</em></span>
-        <div class="trial-price-arrow">↓<small>特別価格</small></div>
-        <div class="trial-price-new"><em>1,100</em><span>円<small>（税込）</small></span></div>
+        <div class="trial-price-old-line">通常 <em>10,000円</em></div>
+        <div class="trial-price-new-line">
+          <span class="trial-price-label">特別価格</span>
+          <span class="trial-price-num"><em>1,100</em>円</span>
+          <span class="trial-price-tax">（税込）</span>
+        </div>
       </div>
 
       <div class="trial-includes">
