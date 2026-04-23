@@ -1,1 +1,3 @@
 preview_*.jpg
+.env
+*.env
